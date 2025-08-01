@@ -1,0 +1,370 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.6;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+  }
+  
+  /* HEADER */
+  header.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #ff5e62;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  nav a {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #ff5e62;
+  }
+  .cart-btn {
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+  
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 85vh;
+    background: url('assets/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .btn {
+    background: linear-gradient(90deg, #ff5e62, #ff9966);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255,94,98,0.4);
+  }
+  
+  /* CATEGORIES */
+  .categories {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .categories h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .categorie-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .categorie-item {
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+  }
+  .categorie-item:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+  .categorie-item p {
+    margin-top: 0.5rem;
+    font-weight: bold;
+  }
+  
+  /* PRODUITS GRID */
+  .produits-section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .produits-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .produits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .produit-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .produit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  .produit-card h3 {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+  .produit-card .prix {
+    color: #ff5e62;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  
+  /* LOOKBOOK */
+  .lookbook {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .lookbook h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* .lookbook-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .lookbook-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 2rem;
+    scroll-snap-type: x mandatory;
+    background-color: red;
+  }
+  
+  .lookbook-scroll img {
+    flex: 0 0 auto;
+    width: 250px;
+    height: auto;
+    border-radius: 12px;
+    scroll-snap-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  } */
+
+  /*---------*/
+  .lookbook-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .lookbook-scroll{
+    width: full;
+    max-width: 1200px;
+    display: flex;
+    gap: 3em;
+    overflow-x: scroll;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .lookbook-scroll img{
+    width: 250px;
+    height: 350px;
+  }
+  /*---------*/
+  
+  .lookbook-scroll img:hover {
+    transform: scale(1.05);
+  }
+  
+  .lookbook-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.3em 0.6em;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .lookbook-btn.left {
+    left: 0.5rem;
+  }
+  
+  .lookbook-btn.right {
+    right: 0.5rem;
+  }
+  
+  
+
+  
+  /* NEWSLETTER */
+  .newsletter {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #f9f9f9;
+  }
+  .newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .newsletter p {
+    margin-bottom: 1rem;
+  }
+  .newsletter form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .newsletter input {
+    padding: 0.8rem;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+  }
+  
+  /* FOOTER */
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+  }
+  footer .socials a {
+    color: #ff9966;
+    margin: 0 0.5rem;
+  }
+  
+  /* ANIMATIONS */
+  .categorie-item, .produit-card, .lookbook-scroll img {
+    /*opacity: 0;*/
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .produit-card .desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+    min-height: 40px; /* pour garder une hauteur uniforme */
+  }
+  
+
+    #hero-slider {
+        position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://fr.freepik.com/photos-gratuite/beau-jeune-homme-retro-habille-chemise-se-trouve-sol_7439614.htm#fromView=search&page=1&position=0&uuid=38d9cb04-c0fa-4015-978e-0e4f130b34df&query=style+homme+");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background-image 1s ease-in-out; /* transition douce */
+}
+      
+      /* 👇 L’overlay transparent sur l’image */
+      #hero-slider .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1;
+      }
+      
+      /* 👇 Le texte au-dessus de l’overlay */
+      .slider-text {
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+      }
+      
+      .slider-text h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      
+      .slider-text p {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+      }
+      
+      .slider-text .btn {
+        background-color: #ff7e57;
+        padding: 0.8rem 1.5rem;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+  
