@@ -375,7 +375,7 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: linear-gradient(-45deg, #ffffff, #f2f4f5);
+  background: linear-gradient(-45deg, #a01a1a,#2b0505, #afbdc4);
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
   position: relative;
@@ -510,4 +510,12 @@ input {
     input, .btn {
         font-size: 14px;
     }
+}
+
+
+
+.section-titler {
+  background: linear-gradient(135deg, #fef1f1, #ffeae0);
+  padding: 60px 20px;
+  text-align: center;
 }

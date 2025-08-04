@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produits Similaires - BALLY Black</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      background: linear-gradient(to right, #fff8f3, #fcefe8);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .cart-btn {
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #333;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    @media (max-width: 1024px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .product-title {
+      font-size: 1.1rem;
+      margin: 15px 0 5px;
+      color: #222;
+    }
+
+    .product-price {
+      font-weight: bold;
+      color: #e85c4f;
+    }
+
+    .product-description {
+      font-size: 0.95rem;
+      color: #666;
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ff6b6b;
+      color: white;
+      padding: 10px 18px;
+      margin-top: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #e85757;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1f1a1a;
+      color: #ffffff;
+      margin-top: 40px;
+    }
+
+    .socials a {
+      color: #333;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">👟 Look’n’Go</div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#produits">Produits</a></li>
+        <li><a href="#lookbook">Lookbook</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+      </ul>
+    </nav>
+    <a href="panier.html" class="cart-btn" id="cart-btn">🛒</a>
+  </header>
+
+  <!-- CONTENU PRINCIPAL -->
+  <div class="container">
+    <h1>Articles dans le même style</h1>
+
+    <div class="products-grid">
+      <!-- Produit 1 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/1200x/e7/c6/30/e7c63059777d69c64bd00f3782752957.jpg" alt="Oxford Noir">
+        <div class="product-title">Oxford Élégance</div>
+        <div class="product-price">29 900 FCFA</div>
+        <div class="product-description">Chaussures formelles noires avec une touche brillante pour les grands rendez-vous.</div>
+        <button class="btn">Ajouter au panier</button>
+      </div>
+
+      <!-- Produit 2 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/1200x/02/fc/82/02fc824955798bfb7252f51a4d6b9f14.jpg" alt="Loafers cuir noir">
+        <div class="product-title">Loafers Prestige</div>
+        <div class="product-price">32 000 FCFA</div>
+        <div class="product-description">Classiques et confortables, parfaites pour le bureau ou les événements habillés.</div>
+        <button class="btn">Ajouter au panier</button>
+      </div>
+
+      <!-- Produit 3 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/736x/ff/ae/38/ffae3812fa14a0794465d70afddd93d7.jpg" alt="Brogues noir mat">
+        <div class="product-title">Brogues Noir Mat</div>
+        <div class="product-price">30 500 FCFA</div>
+        <div class="product-description">Un style rétro revisité, avec détails perforés et finition matte.</div>
+        <button class="btn">Ajouter au panier</button>
+      </div>
+
+      <!-- Produit 4 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/736x/05/21/b3/0521b3b2c1b4d505e5998618f679ed2d.jpg" alt="Derbies Classiques">
+        <div class="product-title">Derbies Classiques</div>
+        <div class="product-price">28 000 FCFA</div>
+        <div class="product-description">Élégance intemporelle avec une finition lisse et des lacets fins.</div>
+        <button class="btn">Ajouter au panier</button>
+      </div>
+
+      <!-- Produit 5 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/1200x/f9/f6/f7/f9f6f73f3ad69f457180a2948ddf8ee3.jpg" alt="Oxford Marron Foncé">
+        <div class="product-title">Oxford Marron Foncé</div>
+        <div class="product-price">32 500 FCFA</div>
+        <div class="product-description">Chaussures de ville à bout droit, parfaites pour les événements formels.</div>
+        <button class="btn">Ajouter au panier</button>
+      </div>
+
+      <!-- Produit 6 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/1200x/65/b8/6e/65b86eaaba528a3d9dace6f9bce194bb.jpg" alt="Mocassins Élégants">
+        <div class="product-title">Mocassins Élégants</div>
+        <div class="product-price">27 900 FCFA</div>
+        <div class="product-description">Mocassins confortables et stylés avec un look professionnel raffiné.</div>
+        <button class="btn">Ajouter au panier</button>
+      </div>
+
+      <!-- Produit 7 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/1200x/05/a6/01/05a6012e453a34f95362acffee35bc8b.jpg" alt="Derbies Élégantes">
+        <div class="product-title">Derbies Élégantes</div>
+        <div class="product-price">34 000 FCFA</div>
+        <div class="product-description">Finesse et confort réunis pour un style professionnel sans effort.</div>
+        <button class="btn">Ajouter au panier</button>
+      </div>
+
+      <!-- Produit 8 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/736x/0c/0d/48/0c0d48a9838daf065e5988d1b078664d.jpg" alt="Chaussure Executive">
+        <div class="product-title">Executive Black</div>
+        <div class="product-price">36 000 FCFA</div>
+        <div class="product-description">Chaussures premium en cuir noir, idéales pour réunions et sorties classe.</div>
+        <button class="btn">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT: Ajouter au panier -->
+  <script>
+    document.querySelectorAll(".product-card").forEach(card => {
+      const btn = card.querySelector(".btn");
+      const titre = card.querySelector(".product-title").innerText;
+      const prix = card.querySelector(".product-price").innerText;
+      const image = card.querySelector("img").getAttribute("src");
+
+      btn.addEventListener("click", () => {
+        const produit = { titre, prix, image };
+        let panier = JSON.parse(localStorage.getItem("panier")) || [];
+        panier.push(produit);
+        localStorage.setItem("panier", JSON.stringify(panier));
+        alert("✅ Produit ajouté au panier !");
+      });
+    });
+  </script>
+
+  <!-- FOOTER -->
+ <footer>
+    <p>&copy; 2025 Look’n’Go. Tous droits réservés.</p>
+    <div class="socials">
+      <a href="#">Instagram</a> | <a href="#">Facebook</a>
+    </div>
+  </footer>
+
+</body>
+</html>

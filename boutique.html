@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Boutique | Look’n’Go</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #f9fafc;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      color: #ff4d4d;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .product-description {
+      font-size: 14px;
+      color: #666;
+      margin: 10px 0 15px;
+      min-height: 45px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: #f1f1f1;
+      color: #333;
+      border: 1px solid #ccc;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #e2e2e2;
+    }
+  </style>
+</head>
+<body>
+
+     <!-- HEADER -->
+  <header class="sticky">
+    <div class="logo">👟 Look’n’Go</div>
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="#produits">Produits</a></li>
+    <li><a href="#lookbook">Lookbook</a></li>
+    <li><a href="inscription.html">Inscription</a></li>
+  </ul>
+</nav>
+    <div class="cart-btn" id="cart-btn">🛒</div>
+  </header>
+
+
+  <div class="container">
+    <h1>Notre Boutique</h1>
+    <div class="product-grid">
+
+      <!-- Produit 1 -->
+      <div class="product-card">
+        <img src="images/chaussure1.jpg" alt="Chaussure">
+        <div class="product-title">Baskets AirWave</div>
+        <div class="product-price">22 900 FCFA</div>
+        <div class="product-description">Des baskets légères et stylées pour un look urbain au top.</div>
+        <div class="btn-group">
+          <button class="btn">Ajouter au panier</button>
+          <a href="similaire.html" class="btn-secondary">Voir similaires</a>
+        </div>
+      </div>
+
+      <!-- Produit 2 -->
+      <div class="product-card">
+        <img src="images/ensemble.jpg" alt="Look Urba">
+        <div class="product-title">Look Urba</div>
+        <div class="product-price">19 900 FCFA</div>
+        <div class="product-description">Tenue complète streetwear idéale pour les sorties entre potes.</div>
+        <div class="btn-group">
+          <button class="btn">Ajouter au panier</button>
+          <a href="similaire.html" class="btn-secondary">Voir similaires</a>
+        </div>
+      </div>
+
+      <!-- Produit 3 -->
+      <div class="product-card">
+        <img src="images/veste.jpg" alt="FreshLook">
+        <div class="product-title">FreshLook</div>
+        <div class="product-price">26 900 FCFA</div>
+        <div class="product-description">Veste coupe-vent légère et tendance, parfaite pour l’automne.</div>
+        <div class="btn-group">
+          <button class="btn">Ajouter au panier</button>
+          <a href="similaire.html" class="btn-secondary">Voir similaires</a>
+        </div>
+      </div>
+
+<!-- Produit 4 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/736x/f9/b3/c4/f9b3c4aff283c671006fd3218f5445b0.jpg" alt="BALLY Black">
+  <div class="product-title">BALLY Black</div>
+  <div class="product-price">35 000 FCFA</div>
+  <div class="product-description">Chaussures élégantes en cuir noir, alliant classe et confort pour toutes occasions.</div>
+  <div class="btn-group">
+    <button class="btn">Ajouter au panier</button>
+    <a href="similaire BALLY Black.html" class="btn-secondary">Voir similaires</a>
+  </div>
+</div>
+
+
+      <!-- Produit 5 -->
+<div class="product-card">
+  <img src="images/basket3.jpg" alt="StreetWave">
+  <div class="product-title">StreetWave</div>
+  <div class="product-price">19 500 FCFA</div>
+  <div class="product-description">Sneakers tendance parfaites pour un look urbain et décontracté.</div>
+  <div class="btn-group">
+    <button class="btn">Ajouter au panier</button>
+    <a href="similaire.html" class="btn-secondary">Voir similaires</a>
+  </div>
+</div>
+
+<!-- Produit 6 -->
+<div class="product-card">
+  <img src="images/basket4.jpg" alt="FlexZone">
+  <div class="product-title">FlexZone</div>
+  <div class="product-price">24 000 FCFA</div>
+  <div class="product-description">Chaussures légères et flexibles, idéales pour le sport et le quotidien.</div>
+  <div class="btn-group">
+    <button class="btn">Ajouter au panier</button>
+    <a href="similaire.html" class="btn-secondary">Voir similaires</a>
+  </div>
+</div>
+
+<!-- Produit 7 -->
+<div class="product-card">
+  <img src="images/basket5.jpg" alt="NightRunner">
+  <div class="product-title">NightRunner</div>
+  <div class="product-price">22 300 FCFA</div>
+  <div class="product-description">Design élégant avec bandes réfléchissantes pour vos runs nocturnes.</div>
+  <div class="btn-group">
+    <button class="btn">Ajouter au panier</button>
+    <a href="similaire.html" class="btn-secondary">Voir similaires</a>
+  </div>
+</div>
+
+<!-- Produit 8 -->
+<div class="product-card">
+  <img src="images/basket6.jpg" alt="SkySprint">
+  <div class="product-title">SkySprint</div>
+  <div class="product-price">26 900 FCFA</div>
+  <div class="product-description">Conçues pour la performance, légèreté extrême et excellente adhérence.</div>
+  <div class="btn-group">
+    <button class="btn">Ajouter au panier</button>
+    <a href="similaire.html" class="btn-secondary">Voir similaires</a>
+  </div>
+</div>
+
+
+      <!-- Tu peux dupliquer ce bloc pour + de produits -->
+
+    </div>
+  </div>
+
+    <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Look’n’Go. Tous droits réservés.</p>
+    <div class="socials">
+      <a href="#">Instagram</a> | <a href="#">Facebook</a>
+    </div>
+  </footer>
+
+</body>
+</html>
