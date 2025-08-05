@@ -6,13 +6,21 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
-      background-color: #f9fafc;
-      font-family: 'Poppins', sans-serif;
       margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #f3f4f6, #e0e7ff, #fff0f5, #fef3c7);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1300px;
       margin: auto;
       padding: 40px 20px;
     }
@@ -21,7 +29,7 @@
       text-align: center;
       font-size: 2.2rem;
       margin-bottom: 40px;
-      color: #333;
+      color: #111827;
     }
 
     .product-grid {
@@ -31,7 +39,7 @@
     }
 
     .product-card {
-      background: #fff;
+      background: #fdf7f7;
       border-radius: 12px;
       padding: 20px;
       text-align: center;
@@ -45,8 +53,8 @@
 
     .product-card img {
       max-width: 100%;
-      border-radius: 8px;
-      height: 200px;
+      border-radius: 10px;
+      height: 300px;
       object-fit: cover;
     }
 
@@ -54,184 +62,210 @@
       font-size: 16px;
       font-weight: 600;
       margin-top: 15px;
-    }
-
-    .product-price {
-      color: #ff4d4d;
-      font-weight: bold;
-      margin-top: 8px;
+      color: #1f2937;
     }
 
     .product-description {
       font-size: 14px;
-      color: #666;
+      color: #555;
       margin: 10px 0 15px;
       min-height: 45px;
     }
 
-    .btn-group {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      background: linear-gradient(to right, #ff4d4d, #ff914d);
-      color: #fff;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      opacity: 0.9;
-    }
-
     .btn-secondary {
-      background: #f1f1f1;
-      color: #333;
-      border: 1px solid #ccc;
-      padding: 10px 16px;
+      background: #f3f4f6;
+      border: 1px solid #d1d5db;
+      color: #111827;
+      padding: 10px 14px;
       border-radius: 8px;
+      font-weight: 500;
       font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
       text-decoration: none;
-      transition: background 0.2s ease;
+      display: inline-block;
     }
 
     .btn-secondary:hover {
-      background: #e2e2e2;
+      background: #e5e7eb;
+      border-color: #9ca3af;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #555;
+      background: #fff;
+      margin-top: 50px;
+    }
+
+  /* FOOTER */
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+  }
+  footer .socials a {
+    color: #ff9966;
+    margin: 0 0.5rem;
+  }
+
   </style>
 </head>
 <body>
 
-     <!-- HEADER -->
   <header class="sticky">
     <div class="logo">👟 Look’n’Go</div>
-<nav class="navbar">
-  <ul class="nav-links">
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="#produits">Produits</a></li>
-    <li><a href="#lookbook">Lookbook</a></li>
-    <li><a href="inscription.html">Inscription</a></li>
-  </ul>
-</nav>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#produits">Produits</a></li>
+        <li><a href="#lookbook">Lookbook</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+      </ul>
+    </nav>
     <div class="cart-btn" id="cart-btn">🛒</div>
   </header>
 
-
   <div class="container">
-    <h1>Notre Boutique</h1>
+    <h1>Découvre nos catégories tendance</h1>
     <div class="product-grid">
 
-      <!-- Produit 1 -->
+      <!-- Catégorie 1 -->
       <div class="product-card">
-        <img src="images/chaussure1.jpg" alt="Chaussure">
-        <div class="product-title">Baskets AirWave</div>
-        <div class="product-price">22 900 FCFA</div>
-        <div class="product-description">Des baskets légères et stylées pour un look urbain au top.</div>
-        <div class="btn-group">
-          <button class="btn">Ajouter au panier</button>
-          <a href="similaire.html" class="btn-secondary">Voir similaires</a>
-        </div>
+        <img src="https://i.pinimg.com/1200x/d2/c3/3a/d2c33a58c6e7820e0d06317cfb4e7e8a.jpg" alt="Chaussures de sport">
+        <div class="product-title">Chaussures de sport</div>
+        <div class="product-description">Explore notre sélection de sneakers pour le sport ou la ville.</div>
+        <a href="categorie-sport.html" class="btn">Voir similaires</a>
       </div>
 
-      <!-- Produit 2 -->
+      <!-- Catégorie 2 -->
       <div class="product-card">
-        <img src="images/ensemble.jpg" alt="Look Urba">
-        <div class="product-title">Look Urba</div>
-        <div class="product-price">19 900 FCFA</div>
-        <div class="product-description">Tenue complète streetwear idéale pour les sorties entre potes.</div>
-        <div class="btn-group">
-          <button class="btn">Ajouter au panier</button>
-          <a href="similaire.html" class="btn-secondary">Voir similaires</a>
-        </div>
+        <img src="https://i.pinimg.com/1200x/ac/0e/2e/ac0e2e73443347f76257a1879d5ec426.jpg" alt="Tenues urbaines">
+        <div class="product-title">Tenues urbaines</div>
+        <div class="product-description">Des ensembles stylés pour un look streetwear assuré.</div>
+        <a href="categorie-urbain.html" class="btn">Voir similaires</a>
       </div>
 
-      <!-- Produit 3 -->
+      <!-- Catégorie 3 -->
       <div class="product-card">
-        <img src="images/veste.jpg" alt="FreshLook">
-        <div class="product-title">FreshLook</div>
-        <div class="product-price">26 900 FCFA</div>
-        <div class="product-description">Veste coupe-vent légère et tendance, parfaite pour l’automne.</div>
-        <div class="btn-group">
-          <button class="btn">Ajouter au panier</button>
-          <a href="similaire.html" class="btn-secondary">Voir similaires</a>
-        </div>
+        <img src="https://i.pinimg.com/736x/bc/ee/55/bcee550acd7dafff9f9b17a7c2838f96.jpg" alt="Vestes tendance">
+        <div class="product-title">Vestes tendance</div>
+        <div class="product-description">Pour affronter le vent avec style et élégance.</div>
+        <a href="categorie-veste.html" class="btn">Voir similaires</a>
       </div>
 
-<!-- Produit 4 -->
+      <!-- Catégorie 4 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/1200x/f8/0a/46/f80a46ea803db1c3d282feb18f3925da.jpg" alt="Sneakers modernes">
+        <div class="product-title">Sneakers modernes</div>
+        <div class="product-description">Des designs innovants pour les fans de mode urbaine.</div>
+        <a href="categorie-sneakers.html" class="btn">Voir similaires</a>
+      </div>
+
+      <!-- Catégorie 5 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/736x/12/36/ad/1236ad818c0561546a861e5a97dc37b1.jpg" alt="Flex & Confort">
+        <div class="product-title">Flex & Confort</div>
+        <div class="product-description">Pour marcher léger et rester à l’aise toute la journée.</div>
+        <a href="categorie-confort.html" class="btn">Voir similaires</a>
+      </div>
+
+      <!-- Catégorie 6 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/1200x/b4/6a/0f/b46a0f88e75189b74cdc348f2c9a49fc.jpg" alt="Nocturne & Réfléchissant">
+        <div class="product-title">Nocturne & Réfléchissant</div>
+        <div class="product-description">Idéales pour briller lors de tes courses nocturnes.</div>
+        <a href="categorie-night.html" class="btn">Voir similaires</a>
+      </div>
+
+      <!-- Catégorie 7 -->
+      <div class="product-card">
+        <img src="images/basket6.jpg" alt="Performance & Vitesse">
+        <div class="product-title">Performance & Vitesse</div>
+        <div class="product-description">Chaussures pour aller toujours plus vite avec style.</div>
+        <a href="categorie-performance.html" class="btn">Voir similaires</a>
+      </div>
+
+      <!-- Catégorie 8 -->
 <div class="product-card">
-  <img src="https://i.pinimg.com/736x/f9/b3/c4/f9b3c4aff283c671006fd3218f5445b0.jpg" alt="BALLY Black">
-  <div class="product-title">BALLY Black</div>
-  <div class="product-price">35 000 FCFA</div>
-  <div class="product-description">Chaussures élégantes en cuir noir, alliant classe et confort pour toutes occasions.</div>
-  <div class="btn-group">
-    <button class="btn">Ajouter au panier</button>
-    <a href="similaire BALLY Black.html" class="btn-secondary">Voir similaires</a>
-  </div>
+  <img src="https://i.pinimg.com/1200x/6d/aa/fd/6daafdcb0c37ba14e6e2088eb812e1b3.jpg" alt="Sacs à Main Femmes">
+  <div class="product-title">Sacs à Main Femmes</div>
+  <div class="product-description">L'accessoire chic pour compléter ton look avec élégance.</div>
+  <a href="categorie-sacs.html" class="btn">Voir similaires</a>
 </div>
 
+      <!-- Catégorie 9 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/736x/c0/bb/1f/c0bb1f59a8fc06d809f577c8f97e0c68.jpg" alt="Minimal & Class">
+        <div class="product-title">Minimal & Class</div>
+        <div class="product-description">Le style épuré qui fait toute la différence.</div>
+        <a href="categorie-minimal.html" class="btn">Voir similaires</a>
+      </div>
 
-      <!-- Produit 5 -->
+      <!-- Catégorie 10 -->
+      <div class="product-card">
+        <img src="https://i.pinimg.com/1200x/36/37/83/3637832a16aeb1cf2298492c9ca85f02.jpg" alt="Tenues Complètes">
+        <div class="product-title">Tenues Complètes</div>
+        <div class="product-description">Compose ton outfit en un seul clic.</div>
+        <a href="categorie-tenue.html" class="btn">Voir similaires</a>
+      </div>
+
+      <!-- Catégorie 11 -->
 <div class="product-card">
-  <img src="images/basket3.jpg" alt="StreetWave">
-  <div class="product-title">StreetWave</div>
-  <div class="product-price">19 500 FCFA</div>
-  <div class="product-description">Sneakers tendance parfaites pour un look urbain et décontracté.</div>
-  <div class="btn-group">
-    <button class="btn">Ajouter au panier</button>
-    <a href="similaire.html" class="btn-secondary">Voir similaires</a>
-  </div>
+  <img src="images/robe1.jpg" alt="Robes Élégantes">
+  <div class="product-title">Robes Élégantes</div>
+  <div class="product-description">Pour un style raffiné lors de tes sorties ou soirées.</div>
+  <a href="categorie-robes.html" class="btn">Voir similaires</a>
 </div>
 
-<!-- Produit 6 -->
+<!-- Catégorie 12 -->
 <div class="product-card">
-  <img src="images/basket4.jpg" alt="FlexZone">
-  <div class="product-title">FlexZone</div>
-  <div class="product-price">24 000 FCFA</div>
-  <div class="product-description">Chaussures légères et flexibles, idéales pour le sport et le quotidien.</div>
-  <div class="btn-group">
-    <button class="btn">Ajouter au panier</button>
-    <a href="similaire.html" class="btn-secondary">Voir similaires</a>
-  </div>
+  <img src="images/casual-homme.jpg" alt="Style Décontracté Homme">
+  <div class="product-title">Style Décontracté Homme</div>
+  <div class="product-description">L’allure cool au quotidien avec confort et style.</div>
+  <a href="categorie-decontracte.html" class="btn">Voir similaires</a>
 </div>
 
-<!-- Produit 7 -->
+<!-- Catégorie 13 -->
 <div class="product-card">
-  <img src="images/basket5.jpg" alt="NightRunner">
-  <div class="product-title">NightRunner</div>
-  <div class="product-price">22 300 FCFA</div>
-  <div class="product-description">Design élégant avec bandes réfléchissantes pour vos runs nocturnes.</div>
-  <div class="btn-group">
-    <button class="btn">Ajouter au panier</button>
-    <a href="similaire.html" class="btn-secondary">Voir similaires</a>
-  </div>
+  <img src="images/talons2.jpg" alt="Chaussures à Talons">
+  <div class="product-title">Chaussures à Talons</div>
+  <div class="product-description">Prenez de la hauteur avec style et élégance.</div>
+  <a href="categorie-talons.html" class="btn">Voir similaires</a>
 </div>
 
-<!-- Produit 8 -->
+<!-- Catégorie 14 -->
 <div class="product-card">
-  <img src="images/basket6.jpg" alt="SkySprint">
-  <div class="product-title">SkySprint</div>
-  <div class="product-price">26 900 FCFA</div>
-  <div class="product-description">Conçues pour la performance, légèreté extrême et excellente adhérence.</div>
-  <div class="btn-group">
-    <button class="btn">Ajouter au panier</button>
-    <a href="similaire.html" class="btn-secondary">Voir similaires</a>
-  </div>
+  <img src="images/streetwear.jpg" alt="Mode Streetwear">
+  <div class="product-title">Mode Streetwear</div>
+  <div class="product-description">Un look urbain tendance pour affirmer ton style.</div>
+  <a href="categorie-streetwear.html" class="btn">Voir similaires</a>
 </div>
 
+<!-- Catégorie 15 -->
+<div class="product-card">
+  <img src="images/accessoires.jpg" alt="Accessoires Femme">
+  <div class="product-title">Accessoires Femme</div>
+  <div class="product-description">Les détails qui font toute la différence.</div>
+  <a href="categorie-accessoires.html" class="btn">Voir similaires</a>
+</div>
 
-      <!-- Tu peux dupliquer ce bloc pour + de produits -->
+<!-- Catégorie 16 -->
+<div class="product-card">
+  <img src="images/sportwear.jpg" alt="Sportwear Mixte">
+  <div class="product-title">Sportwear Mixte</div>
+  <div class="product-description">Pour bouger avec style, au sport comme en ville.</div>
+  <a href="categorie-sport.html" class="btn">Voir similaires</a>
+</div>
+
 
     </div>
   </div>
 
-    <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Look’n’Go. Tous droits réservés.</p>
     <div class="socials">
