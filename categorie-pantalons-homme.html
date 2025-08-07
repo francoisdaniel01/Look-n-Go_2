@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pantalons Jeans Homme</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .catalogue {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .produit {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        text-align: center;
+      }
+
+      .produit img {
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      .produit h3 {
+        margin-top: 15px;
+        font-size: 18px;
+        color: #333;
+      }
+
+      .produit p {
+        font-size: 14px;
+        color: #777;
+        margin: 10px 0;
+      }
+
+      .prix {
+        font-weight: bold;
+        font-size: 16px;
+        color: #1a73e8;
+      }
+
+      .quantite {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .quantite button {
+        padding: 5px 10px;
+        margin: 0 5px;
+        font-size: 16px;
+        border: none;
+        background-color: #1a73e8;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .quantite span {
+        font-size: 16px;
+        width: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Nos Pantalons Jeans pour Hommes</h1>
+    <div class="catalogue" id="catalogue"></div>
+
+    <script>
+      const produits = [
+        {
+          nom: "Jean classique bleu",
+          description: "Un jean bleu intemporel, coupe droite.",
+          prix: 12000,
+          image: "https://via.placeholder.com/250x300?text=Jean+1"
+        },
+        {
+          nom: "Jean skinny noir",
+          description: "Look moderne avec une coupe ajustée.",
+          prix: 15000,
+          image: "https://via.placeholder.com/250x300?text=Jean+2"
+        },
+        {
+          nom: "Jean délavé clair",
+          description: "Un effet usé stylé pour vos sorties.",
+          prix: 13000,
+          image: "https://via.placeholder.com/250x300?text=Jean+3"
+        },
+        {
+          nom: "Jean destroy",
+          description: "Fentes légères et effet vintage.",
+          prix: 14000,
+          image: "https://via.placeholder.com/250x300?text=Jean+4"
+        },
+        {
+          nom: "Jean brut sans déchirure",
+          description: "Sobriété et classe au rendez-vous.",
+          prix: 12500,
+          image: "https://via.placeholder.com/250x300?text=Jean+5"
+        },
+        {
+          nom: "Jean gris charbon",
+          description: "Tons sombres pour un style raffiné.",
+          prix: 13500,
+          image: "https://via.placeholder.com/250x300?text=Jean+6"
+        },
+        {
+          nom: "Jean coupe droite classique",
+          description: "Confort assuré pour un usage quotidien.",
+          prix: 11000,
+          image: "https://via.placeholder.com/250x300?text=Jean+7"
+        },
+        {
+          nom: "Jean slim effet stretch",
+          description: "Élasticité et modernité combinées.",
+          prix: 14500,
+          image: "https://via.placeholder.com/250x300?text=Jean+8"
+        },
+        {
+          nom: "Jean coupe cargo",
+          description: "Poches multiples pour plus de praticité.",
+          prix: 15500,
+          image: "https://via.placeholder.com/250x300?text=Jean+9"
+        },
+        {
+          nom: "Jean blanc pur",
+          description: "Élégance rare pour tenues d’été.",
+          prix: 16000,
+          image: "https://via.placeholder.com/250x300?text=Jean+10"
+        },
+        {
+          nom: "Jean court cheville",
+          description: "Pour un style urbain et léger.",
+          prix: 12500,
+          image: "https://via.placeholder.com/250x300?text=Jean+11"
+        }
+      ];
+
+      const catalogue = document.getElementById("catalogue");
+
+      produits.forEach((produit, index) => {
+        const div = document.createElement("div");
+        div.className = "produit";
+        div.innerHTML = `
+          <img src="${produit.image}" alt="${produit.nom}" />
+          <h3>${produit.nom}</h3>
+          <p>${produit.description}</p>
+          <p class="prix">${produit.prix.toLocaleString()} FCFA</p>
+          <div class="quantite">
+            <button onclick="changerQuantite(${index}, -1)">-</button>
+            <span id="quantite-${index}">0</span>
+            <button onclick="changerQuantite(${index}, 1)">+</button>
+          </div>
+        `;
+        catalogue.appendChild(div);
+      });
+
+      const quantites = new Array(produits.length).fill(0);
+
+      function changerQuantite(index, valeur) {
+        quantites[index] += valeur;
+        if (quantites[index] < 0) quantites[index] = 0;
+        document.getElementById(`quantite-${index}`).innerText = quantites[index];
+      }
+    </script>
+  </body>
+</html>

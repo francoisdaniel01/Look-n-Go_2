@@ -11,25 +11,101 @@ const observer = new IntersectionObserver((entries) => {
     .forEach(el => observer.observe(el));
   
   // --- PANIER SIMPLE ---
-  let panier = [];
-  document.querySelectorAll('.produit-card button').forEach(button => {
-    button.addEventListener('click', () => {
-      const produitCard = button.closest('.produit-card');
-      const nom = produitCard.querySelector('h3').textContent;
-      const prix = produitCard.querySelector('.prix').textContent;
-      panier.push({ nom, prix });
-      alert(`${nom} ajouté au panier !`);
-    });
-  });
-  
-  document.getElementById('cart-btn').addEventListener('click', () => {
-    if (panier.length === 0) {
-      alert("Votre panier est vide !");
+function showQuantity(button) {
+    const btnGroup = button.parentElement;
+    const quantityControls = btnGroup.querySelector('.quantity-controls');
+
+    button.style.display = 'none';
+    quantityControls.style.display = 'flex';
+  }
+
+  function increaseQty(btn) {
+    const span = btn.parentElement.querySelector('span');
+    let count = parseInt(span.innerText) + 1;
+    span.innerText = count;
+
+    updateCartFromCard(btn.closest('.product-card'), count);
+  }
+
+  function decreaseQty(btn) {
+    const span = btn.parentElement.querySelector('span');
+    let count = parseInt(span.innerText) - 1;
+
+    if (count <= 0) {
+      const quantityControls = btn.parentElement;
+      const btnGroup = quantityControls.parentElement;
+      quantityControls.style.display = 'none';
+      btnGroup.querySelector('.btn').style.display = 'block';
+
+      removeFromCart(btn.closest('.product-card'));
     } else {
-      let message = "Panier :\n";
-      panier.forEach((p, i) => message += `${i + 1}. ${p.nom} - ${p.prix}\n`);
-      alert(message);
+      span.innerText = count;
+      updateCartFromCard(btn.closest('.product-card'), count);
     }
+  }
+
+  // Met à jour la quantité d'un produit déjà dans le panier
+  function updateCartFromCard(card, quantity) {
+    const titre = card.querySelector(".product-title").innerText;
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+    let produit = panier.find(p => p.titre === titre);
+    if (produit) {
+      produit.quantite = quantity;
+    } else {
+      const prixTexte = card.querySelector(".prix").innerText;
+      const prix = parseInt(prixTexte.replace(/[^\d]/g, '')); // "29 900 FCFA" -> 29900
+      const image = card.querySelector("img").getAttribute("src");
+
+      panier.push({
+        titre,
+        prix,
+        image,
+        quantite: quantity
+      });
+    }
+    localStorage.setItem("panier", JSON.stringify(panier));
+  }
+
+  // Supprime un produit du panier
+  function removeFromCart(card) {
+    const titre = card.querySelector(".product-title").innerText;
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+    panier = panier.filter(p => p.titre !== titre);
+    localStorage.setItem("panier", JSON.stringify(panier));
+  }
+
+  // Quand on clique sur "Ajouter au panier"
+  document.querySelectorAll(".product-card").forEach(card => {
+    const addButton = card.querySelector(".btn");
+    const quantitySpan = card.querySelector(".quantity-controls span");
+
+    addButton.addEventListener("click", () => {
+      const titre = card.querySelector(".product-title").innerText;
+      const prixTexte = card.querySelector(".prix").innerText;
+      const prix = parseInt(prixTexte.replace(/[^\d]/g, '')); // ✅ conversion
+      const image = card.querySelector("img").getAttribute("src");
+
+      const produit = {
+        titre,
+        prix,
+        image,
+        quantite: parseInt(quantitySpan.innerText)
+      };
+
+      let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+      // Vérifie si l'article existe déjà
+      const index = panier.findIndex(p => p.titre === titre);
+      if (index >= 0) {
+        panier[index].quantite += produit.quantite;
+      } else {
+        panier.push(produit);
+      }
+
+      localStorage.setItem("panier", JSON.stringify(panier));
+      alert("✅ Produit ajouté au panier !");
+    });
   });
   
   // --- SCROLL SMOOTH (menu avec ancres) ---

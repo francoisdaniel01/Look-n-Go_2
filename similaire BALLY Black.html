@@ -153,6 +153,81 @@
       margin: 0 8px;
       text-decoration: none;
     }
+    
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* espace entre titre et bouton */
+  margin: 90px 11%; /* même marge qu’avant pour garder l’emplacement */
+}
+
+.btn-retour-icon {
+  background: linear-gradient(to right, #ffa500, #ff5500);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 44px;
+  height: 44px;
+  border-radius: 20%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+        font-size: 1.1rem;
+      margin: 15px 0 5px;
+}
+
+.btn-retour-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(255, 85, 0, 0.5);
+}
+    .btn-retour-container {
+  margin: -10px 80px 10px 20px; /* remonte le bouton */
+}
+
+
+    .btn-add:active {
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.btn-add.animate {
+  animation: bounce 0.3s ease;
+}
+
+    .quantity-controls {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 5px 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quantity-controls span {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 20px;
+ }
+
+
   </style>
 </head>
 <body>
@@ -165,116 +240,280 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="#produits">Produits</a></li>
         <li><a href="#lookbook">Lookbook</a></li>
-        <li><a href="inscription.html">Inscription</a></li>
+        <li><a href="inscription.html">Inscription</a></li>X
       </ul>
     </nav>
     <a href="panier.html" class="cart-btn" id="cart-btn">🛒</a>
+
+
+
   </header>
 
   <!-- CONTENU PRINCIPAL -->
   <div class="container">
     <h1>Articles dans le même style</h1>
+    <div class="btn-retour-container">
+  <button onclick="history.back()" class="btn-retour-icon" aria-label="Retour">
+    ←
+  </button>
+</div>
 
     <div class="products-grid">
-      <!-- Produit 1 -->
-      <div class="product-card">
-        <img src="https://i.pinimg.com/1200x/e7/c6/30/e7c63059777d69c64bd00f3782752957.jpg" alt="Oxford Noir">
-        <div class="product-title">Oxford Élégance</div>
-        <div class="product-price">29 900 FCFA</div>
-        <div class="product-description">Chaussures formelles noires avec une touche brillante pour les grands rendez-vous.</div>
-        <button class="btn">Ajouter au panier</button>
-      </div>
-
-      <!-- Produit 2 -->
-      <div class="product-card">
-        <img src="https://i.pinimg.com/1200x/02/fc/82/02fc824955798bfb7252f51a4d6b9f14.jpg" alt="Loafers cuir noir">
-        <div class="product-title">Loafers Prestige</div>
-        <div class="product-price">32 000 FCFA</div>
-        <div class="product-description">Classiques et confortables, parfaites pour le bureau ou les événements habillés.</div>
-        <button class="btn">Ajouter au panier</button>
-      </div>
-
-      <!-- Produit 3 -->
-      <div class="product-card">
-        <img src="https://i.pinimg.com/736x/ff/ae/38/ffae3812fa14a0794465d70afddd93d7.jpg" alt="Brogues noir mat">
-        <div class="product-title">Brogues Noir Mat</div>
-        <div class="product-price">30 500 FCFA</div>
-        <div class="product-description">Un style rétro revisité, avec détails perforés et finition matte.</div>
-        <button class="btn">Ajouter au panier</button>
-      </div>
-
-      <!-- Produit 4 -->
-      <div class="product-card">
-        <img src="https://i.pinimg.com/736x/05/21/b3/0521b3b2c1b4d505e5998618f679ed2d.jpg" alt="Derbies Classiques">
-        <div class="product-title">Derbies Classiques</div>
-        <div class="product-price">28 000 FCFA</div>
-        <div class="product-description">Élégance intemporelle avec une finition lisse et des lacets fins.</div>
-        <button class="btn">Ajouter au panier</button>
-      </div>
-
-      <!-- Produit 5 -->
-      <div class="product-card">
-        <img src="https://i.pinimg.com/1200x/f9/f6/f7/f9f6f73f3ad69f457180a2948ddf8ee3.jpg" alt="Oxford Marron Foncé">
-        <div class="product-title">Oxford Marron Foncé</div>
-        <div class="product-price">32 500 FCFA</div>
-        <div class="product-description">Chaussures de ville à bout droit, parfaites pour les événements formels.</div>
-        <button class="btn">Ajouter au panier</button>
-      </div>
-
-      <!-- Produit 6 -->
-      <div class="product-card">
-        <img src="https://i.pinimg.com/1200x/65/b8/6e/65b86eaaba528a3d9dace6f9bce194bb.jpg" alt="Mocassins Élégants">
-        <div class="product-title">Mocassins Élégants</div>
-        <div class="product-price">27 900 FCFA</div>
-        <div class="product-description">Mocassins confortables et stylés avec un look professionnel raffiné.</div>
-        <button class="btn">Ajouter au panier</button>
-      </div>
-
-      <!-- Produit 7 -->
-      <div class="product-card">
-        <img src="https://i.pinimg.com/1200x/05/a6/01/05a6012e453a34f95362acffee35bc8b.jpg" alt="Derbies Élégantes">
-        <div class="product-title">Derbies Élégantes</div>
-        <div class="product-price">34 000 FCFA</div>
-        <div class="product-description">Finesse et confort réunis pour un style professionnel sans effort.</div>
-        <button class="btn">Ajouter au panier</button>
-      </div>
-
-      <!-- Produit 8 -->
-      <div class="product-card">
-        <img src="https://i.pinimg.com/736x/0c/0d/48/0c0d48a9838daf065e5988d1b078664d.jpg" alt="Chaussure Executive">
-        <div class="product-title">Executive Black</div>
-        <div class="product-price">36 000 FCFA</div>
-        <div class="product-description">Chaussures premium en cuir noir, idéales pour réunions et sorties classe.</div>
-        <button class="btn">Ajouter au panier</button>
-      </div>
+<!-- Produit 1 -->
+<div class="product-card" 
+     data-titre="Oxford Élégance" 
+     data-prix="29900" 
+     data-image="https://i.pinimg.com/1200x/e7/c6/30/e7c63059777d69c64bd00f3782752957.jpg">
+  
+  <img src="https://i.pinimg.com/1200x/e7/c6/30/e7c63059777d69c64bd00f3782752957.jpg" alt="Oxford Noir">
+  
+  <div class="product-title">Oxford Élégance</div>
+  <div class="product-description">Chaussures formelles noires avec une touche brillante pour les grands rendez-vous.</div>
+  <div class="stars">⭐⭐⭐⭐☆</div>
+  <div class="reviews">(42 avis)</div>
+  <div class="prix">29 900 FCFA</div>
+  
+  <div class="btn-group">
+    <button class="btn" onclick="addToCart(this)">Ajouter au panier</button>
+    <div class="quantity-controls" style="display:none;">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
     </div>
   </div>
+</div>
+
+
+<!-- Produit 2 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/1200x/02/fc/82/02fc824955798bfb7252f51a4d6b9f14.jpg" alt="Loafers cuir noir">
+  <div class="product-title">Loafers Prestige</div>
+  <div class="product-description">Classiques et confortables, parfaites pour le bureau ou les événements habillés.</div>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <div class="reviews">(58 avis)</div>
+  <div class="prix">32 000 FCFA</div>
+  <div class="btn-group">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit 3 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/736x/ff/ae/38/ffae3812fa14a0794465d70afddd93d7.jpg" alt="Brogues noir mat">
+  <div class="product-title">Brogues Noir Mat</div>
+  <div class="product-description">Un style rétro revisité, avec détails perforés et finition matte.</div>
+  <div class="stars">⭐⭐⭐⭐☆</div>
+  <div class="reviews">(36 avis)</div>
+  <div class="prix">30 500 FCFA</div>
+  <div class="btn-group">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit 4 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/736x/05/21/b3/0521b3b2c1b4d505e5998618f679ed2d.jpg" alt="Derbies Classiques">
+  <div class="product-title">Derbies Classiques</div>
+  <div class="product-description">Élégance intemporelle avec une finition lisse et des lacets fins.</div>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <div class="reviews">(50 avis)</div>
+  <div class="prix">28 000 FCFA</div>
+  <div class="btn-group">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit 5 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/1200x/f9/f6/f7/f9f6f73f3ad69f457180a2948ddf8ee3.jpg" alt="Oxford Marron Foncé">
+  <div class="product-title">Oxford Marron Foncé</div>
+  <div class="product-description">Chaussures de ville à bout droit, parfaites pour les événements formels.</div>
+  <div class="stars">⭐⭐⭐⭐☆</div>
+  <div class="reviews">(40 avis)</div>
+  <div class="prix">32 500 FCFA</div>
+  <div class="btn-group">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit 6 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/1200x/65/b8/6e/65b86eaaba528a3d9dace6f9bce194bb.jpg" alt="Mocassins Élégants">
+  <div class="product-title">Mocassins Élégants</div>
+  <div class="product-description">Mocassins confortables et stylés avec un look professionnel raffiné.</div>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <div class="reviews">(62 avis)</div>
+  <div class="prix">27 900 FCFA</div>
+  <div class="btn-group">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit 7 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/1200x/05/a6/01/05a6012e453a34f95362acffee35bc8b.jpg" alt="Derbies Élégantes">
+  <div class="product-title">Derbies Élégantes</div>
+  <div class="product-description">Finesse et confort réunis pour un style professionnel sans effort.</div>
+  <div class="stars">⭐⭐⭐⭐☆</div>
+  <div class="reviews">(39 avis)</div>
+  <div class="prix">34 000 FCFA</div>
+  <div class="btn-group">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit 8 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/736x/0c/0d/48/0c0d48a9838daf065e5988d1b078664d.jpg" alt="Chaussure Executive">
+  <div class="product-title">Executive Black</div>
+  <div class="product-description">Chaussures premium en cuir noir, idéales pour réunions et sorties classe.</div>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <div class="reviews">(66 avis)</div>
+  <div class="prix">36 000 FCFA</div>
+  <div class="btn-group">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
+    </div>
+  </div>
+</div>
+
 
   <!-- SCRIPT: Ajouter au panier -->
-  <script>
-    document.querySelectorAll(".product-card").forEach(card => {
-      const btn = card.querySelector(".btn");
-      const titre = card.querySelector(".product-title").innerText;
-      const prix = card.querySelector(".product-price").innerText;
+<script>
+  function showQuantity(button) {
+    const btnGroup = button.parentElement;
+    const quantityControls = btnGroup.querySelector('.quantity-controls');
+
+    button.style.display = 'none';
+    quantityControls.style.display = 'flex';
+  }
+
+  function increaseQty(btn) {
+    const span = btn.parentElement.querySelector('span');
+    let count = parseInt(span.innerText) + 1;
+    span.innerText = count;
+
+    updateCartFromCard(btn.closest('.product-card'), count);
+  }
+
+  function decreaseQty(btn) {
+    const span = btn.parentElement.querySelector('span');
+    let count = parseInt(span.innerText) - 1;
+
+    if (count <= 0) {
+      const quantityControls = btn.parentElement;
+      const btnGroup = quantityControls.parentElement;
+      quantityControls.style.display = 'none';
+      btnGroup.querySelector('.btn').style.display = 'block';
+
+      removeFromCart(btn.closest('.product-card'));
+    } else {
+      span.innerText = count;
+      updateCartFromCard(btn.closest('.product-card'), count);
+    }
+  }
+
+  // Met à jour la quantité d'un produit déjà dans le panier
+  function updateCartFromCard(card, quantity) {
+    const titre = card.querySelector(".product-title").innerText;
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+    let produit = panier.find(p => p.titre === titre);
+    if (produit) {
+      produit.quantite = quantity;
+    } else {
+      const prixTexte = card.querySelector(".prix").innerText;
+      const prix = parseInt(prixTexte.replace(/[^\d]/g, '')); // "29 900 FCFA" -> 29900
       const image = card.querySelector("img").getAttribute("src");
 
-      btn.addEventListener("click", () => {
-        const produit = { titre, prix, image };
-        let panier = JSON.parse(localStorage.getItem("panier")) || [];
-        panier.push(produit);
-        localStorage.setItem("panier", JSON.stringify(panier));
-        alert("✅ Produit ajouté au panier !");
+      panier.push({
+        titre,
+        prix,
+        image,
+        quantite: quantity
       });
-    });
-  </script>
+    }
+    localStorage.setItem("panier", JSON.stringify(panier));
+  }
 
-  <!-- FOOTER -->
- <footer>
-    <p>&copy; 2025 Look’n’Go. Tous droits réservés.</p>
-    <div class="socials">
-      <a href="#">Instagram</a> | <a href="#">Facebook</a>
-    </div>
-  </footer>
+  // Supprime un produit du panier
+  function removeFromCart(card) {
+    const titre = card.querySelector(".product-title").innerText;
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+    panier = panier.filter(p => p.titre !== titre);
+    localStorage.setItem("panier", JSON.stringify(panier));
+  }
+
+  // Quand on clique sur "Ajouter au panier"
+  document.querySelectorAll(".product-card").forEach(card => {
+    const addButton = card.querySelector(".btn");
+    const quantitySpan = card.querySelector(".quantity-controls span");
+
+    addButton.addEventListener("click", () => {
+      const titre = card.querySelector(".product-title").innerText;
+      const prixTexte = card.querySelector(".prix").innerText;
+      const prix = parseInt(prixTexte.replace(/[^\d]/g, '')); // ✅ conversion
+      const image = card.querySelector("img").getAttribute("src");
+
+      const produit = {
+        titre,
+        prix,
+        image,
+        quantite: parseInt(quantitySpan.innerText)
+      };
+
+      let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+      // Vérifie si l'article existe déjà
+      const index = panier.findIndex(p => p.titre === titre);
+      if (index >= 0) {
+        panier[index].quantite += produit.quantite;
+      } else {
+        panier.push(produit);
+      }
+
+      localStorage.setItem("panier", JSON.stringify(panier));
+      alert("✅ Produit ajouté au panier !");
+    });
+  });
+</script>
+
+
+
+
 
 </body>
 </html>
