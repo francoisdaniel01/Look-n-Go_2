@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tenues Urbaines</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffffff, #f2f2ff, #fff0f5);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 11%;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      user-select: none;
+    }
+
+    nav ul li a:hover {
+      color: #ff6a00;
+    }
+
+    .cart-btn {
+      font-size: 1.8rem;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    /* TITRE PAGE */
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #333;
+    }
+
+    /* BOUTON RETOUR */
+    .btn-retour-container {
+      max-width: 1200px;
+      margin: 40px auto 10px 20px;
+    }
+
+    .btn-retour-icon {
+      background: linear-gradient(to right, #ffa500, #ff5500);
+      border: none;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: bold;
+      width: 44px;
+      height: 44px;
+      border-radius: 20%;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      margin-bottom: 20px;
+      user-select: none;
+    }
+
+    .btn-retour-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(255, 85, 0, 0.5);
+    }
+
+    /* PRODUITS */
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-title {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #222;
+    }
+
+    .product-description {
+      font-size: 0.9em;
+      color: #666;
+      margin: 8px 0;
+    }
+
+    .stars {
+      color: #f5a623;
+      font-size: 1.1em;
+    }
+
+    .reviews {
+      font-size: 0.85em;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .prix {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .btn-group {
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .btn {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+      user-select: none;
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    @keyframes bounce {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    .btn.animate {
+      animation: bounce 0.3s ease;
+    }
+
+    .quantity-controls {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .quantity-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 5px 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .quantity-controls span {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 20px;
+      display: inline-block;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">👟 Look’n’Go</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#produits">Produits</a></li>
+        <li><a href="#lookbook">Lookbook</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+      </ul>
+    </nav>
+    <a href="panier.html" class="cart-btn" id="cart-btn" aria-label="Panier">🛒</a>
+  </header>
+
+  <h1>Tenues Urbaines</h1>
+
+  <div class="btn-retour-container">
+    <button onclick="history.back()" class="btn-retour-icon" aria-label="Retour">
+      ←
+    </button>
+  </div>
+
+  <div class="product-container" id="produits">
+    <!-- Produit 1 -->
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/58/50/b6/5850b6d9f8d8afc4bfa6e0ad0f9153b1.jpg" alt="Tenue Streetwear Classique" />
+      <div class="product-title">Tenue Streetwear Classique</div>
+      <div class="product-description">Ensemble t-shirt oversize et pantalon cargo pour un style urbain décontracté parfait pour le quotidien.</div>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+      <div class="reviews">(54 avis)</div>
+      <div class="prix">18 900 F CFA</div>
+      <div class="btn-group">
+        <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+        <div class="quantity-controls">
+          <button onclick="decreaseQty(this)">➖</button>
+          <span>1</span>
+          <button onclick="increaseQty(this)">➕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produit 2 -->
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/43/cb/ea/43cbea2b624b60cf5d977d91e41a4cf3.jpg" alt="Ensemble Hoodie & Jogger" />
+      <div class="product-title">Ensemble Hoodie & Jogger</div>
+      <div class="product-description">Sweat à capuche molletonné et jogging assorti pour un look streetwear confortable et tendance.</div>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <div class="reviews">(72 avis)</div>
+      <div class="prix">22 500 F CFA</div>
+      <div class="btn-group">
+        <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+        <div class="quantity-controls">
+          <button onclick="decreaseQty(this)">➖</button>
+          <span>1</span>
+          <button onclick="increaseQty(this)">➕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produit 3 -->
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/13/bd/48/13bd4847d66a9db1ff7a6ed788bb2d8e.jpg" alt="Look Urbain Denim" />
+      <div class="product-title">Look Urbain Denim</div>
+      <div class="product-description">Veste en jean oversize et pantalon slim pour un style urbain intemporel et élégant.</div>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <div class="reviews">(63 avis)</div>
+      <div class="prix">25 000 F CFA</div>
+      <div class="btn-group">
+        <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+        <div class="quantity-controls">
+          <button onclick="decreaseQty(this)">➖</button>
+          <span>1</span>
+          <button onclick="increaseQty(this)">➕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produit 4 -->
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/3b/3d/3d/3b3d3d84f963ae0f91499ad8a6cb6a2e.jpg" alt="Set Urbain Oversize" />
+      <div class="product-title">Set Urbain Oversize</div>
+      <div class="product-description">T-shirt oversize et short large pour un look streetwear respirant et moderne.</div>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+      <div class="reviews">(48 avis)</div>
+      <div class="prix">17 800 F CFA</div>
+      <div class="btn-group">
+        <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+        <div class="quantity-controls">
+          <button onclick="decreaseQty(this)">➖</button>
+          <span>1</span>
+          <button onclick="increaseQty(this)">➕</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showQuantity(button) {
+      const btnGroup = button.parentElement;
+      const quantityControls = btnGroup.querySelector('.quantity-controls');
+
+      button.style.display = 'none';
+      quantityControls.style.display = 'flex';
+    }
+
+    function increaseQty(btn) {
+      const span = btn.parentElement.querySelector('span');
+      let count = parseInt(span.innerText) + 1;
+      span.innerText = count;
+
+      updateCartFromCard(btn.closest('.product-card'), count);
+    }
+
+    function decreaseQty(btn) {
+      const span = btn.parentElement.querySelector('span');
+      let count = parseInt(span.innerText) - 1;
+
+      if (count <= 0) {
+        const quantityControls = btn.parentElement;
+        const btnGroup = quantityControls.parentElement;
+        quantityControls.style.display = 'none';
+        btnGroup.querySelector('.btn').style.display = 'block';
+
+        removeFromCart(btn.closest('.product-card'));
+      } else {
+        span.innerText = count;
+        updateCartFromCard(btn.closest('.product-card'), count);
+      }
+    }
+
+    // Met à jour la quantité d'un produit dans le panier localStorage
+    function updateCartFromCard(card, quantity) {
+      const titre = card.querySelector(".product-title").innerText;
+      let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+      let produit = panier.find(p => p.titre === titre);
+      if (produit) {
+        produit.quantite = quantity;
+      } else {
+        const prixTexte = card.querySelector(".prix").innerText;
+        const prix = parseInt(prixTexte.replace(/[^\d]/g, '')); // ex: "18 900 F CFA" -> 18900
+        const image = card.querySelector("img").getAttribute("src");
+
+        panier.push({
+          titre,
+          prix,
+          image,
+          quantite: quantity
+        });
+      }
+      localStorage.setItem("panier", JSON.stringify(panier));
+    }
+
+    // Supprime un produit du panier localStorage
+    function removeFromCart(card) {
+      const titre = card.querySelector(".product-title").innerText;
+      let panier = JSON.parse(localStorage.getItem("panier")) || [];
+      panier = panier.filter(p => p.titre !== titre);
+      localStorage.setItem("panier", JSON.stringify(panier));
+    }
+  </script>
+</body>
+</html>

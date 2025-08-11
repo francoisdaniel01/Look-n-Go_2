@@ -113,6 +113,111 @@
     margin: 0 0.5rem;
   }
 
+
+
+
+
+
+  .btn-add.animate {
+  animation: bounce 0.3s ease;
+}
+
+    .quantity-controls {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 5px 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quantity-controls span {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 20px;
+    }
+
+    .header-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* espace entre titre et bouton */
+  margin: 90px 11%; /* même marge qu’avant pour garder l’emplacement */
+}
+
+.btn-retour-icon {
+  background: linear-gradient(to right, #ffa500, #ff5500);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 44px;
+  height: 44px;
+  border-radius: 20%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+        font-size: 1.1rem;
+      margin: 15px 0 5px;
+}
+
+.btn-retour-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(255, 85, 0, 0.5);
+}
+    .btn-retour-container {
+  margin: -10px 80px 10px 20px; /* remonte le bouton */
+}
+
+
+    .btn-add:active {
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.btn-add.animate {
+  animation: bounce 0.3s ease;
+}
+
+    .quantity-controls {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 5px 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quantity-controls span {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 20px;
+    }
   </style>
 </head>
 <body>
@@ -127,11 +232,16 @@
         <li><a href="inscription.html">Inscription</a></li>
       </ul>
     </nav>
-    <div class="cart-btn" id="cart-btn">🛒</div>
+    <a href="panier.html" class="cart-btn" id="cart-btn">🛒</a>
   </header>
 
   <div class="container">
-    <h1>Découvre nos catégories tendance</h1>
+    <h1>Découvre notre Boutique</h1>
+    <div class="btn-retour-container">
+      <button onclick="history.back()" class="btn-retour-icon" aria-label="Retour">
+        ←
+      </button>
+    </div>
     <div class="product-grid">
 
       <!-- Catégorie 1 -->
