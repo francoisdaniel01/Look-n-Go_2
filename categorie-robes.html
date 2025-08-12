@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chaussures de sport</title>
+    <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffffff, #f2f2ff, #fff0f5);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #333;
+    }
+
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-title {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #222;
+    }
+
+    .product-description {
+      font-size: 0.9em;
+      color: #666;
+      margin: 8px 0;
+    }
+
+    .stars {
+      color: #f5a623;
+      font-size: 1.1em;
+    }
+
+    .reviews {
+      font-size: 0.85em;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .btn-group {
+      margin-top: 10px;
+      position: relative;
+    }
+
+    
+
+    .btn-add:active {
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.btn-add.animate {
+  animation: bounce 0.3s ease;
+}
+
+    .quantity-controls {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 5px 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quantity-controls span {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 20px;
+    }
+
+    .header-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* espace entre titre et bouton */
+  margin: 90px 11%; /* même marge qu’avant pour garder l’emplacement */
+}
+
+.btn-retour-icon {
+  background: linear-gradient(to right, #ffa500, #ff5500);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 44px;
+  height: 44px;
+  border-radius: 20%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+        font-size: 1.1rem;
+      margin: 15px 0 5px;
+}
+
+.btn-retour-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(255, 85, 0, 0.5);
+}
+    .btn-retour-container {
+  margin: -10px 80px 10px 20px; /* remonte le bouton */
+}
+
+
+    .btn-add:active {
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.btn-add.animate {
+  animation: bounce 0.3s ease;
+}
+
+    .quantity-controls {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 5px 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quantity-controls span {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 20px;
+ }
+  </style>
+</head>
+<body>
+      <!-- HEADER -->
+  <header class="sticky">
+    <div class="logo">👟 Look’n’Go</div>
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="#produits">Produits</a></li>
+    <li><a href="#lookbook">Lookbook</a></li>
+    <li><a href="inscription.html">Inscription</a></li>
+  </ul>
+</nav>
+    <a href="panier.html" class="cart-btn" id="cart-btn">🛒</a>
+
+  </header>
+
+<!-- Titre et sous-titre -->
+<h1 style="text-align:center; font-size:2.2em; font-weight:bold; margin-bottom:10px; color:#222;">
+    Robes d’Été – Légèreté & Élégance
+  </h1>
+  <p style="text-align:center; font-size:1.1em; color:#555; max-width:800px; margin:0 auto 30px auto; line-height:1.5;">
+    Des tenues légères, colorées et parfaites pour la saison chaude.
+  </p>
+  
+    <div class="btn-retour-container">
+  <button onclick="history.back()" class="btn-retour-icon" aria-label="Retour">
+    ←
+  </button>
+</div>
+
+<div class="product-container">
+<!-- Produit 1 -->
+<div class="product-card">
+    <img src="https://i.pinimg.com/736x/d8/1d/28/d81d2876a872f36a8415cbfd91158068.jpg" alt="Robe Fleurie Bohème">
+    <div class="product-title">Robe Fleurie Bohème</div>
+    <div class="product-description">Robe fluide à imprimés floraux, idéale pour un style bohème chic.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(45 avis)</div>
+    <div class="prix">14 500 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 2 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/f0/44/9c/f0449c3c6c022ceebf65cb51f0b6e7a6.jpg" alt="Robe Maxi Blanche">
+    <div class="product-title">Robe Maxi Blanche</div>
+    <div class="product-description">Longue robe blanche en coton, élégante et respirante pour l’été.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(39 avis)</div>
+    <div class="prix">16 000 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 3 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/6b/20/8d/6b208dcb6b58a3e38fcdfbbd2b9276b4.jpg" alt="Robe Jaune Soleil">
+    <div class="product-title">Robe Jaune Soleil</div>
+    <div class="product-description">Robe courte jaune vif, parfaite pour un look lumineux et joyeux.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(52 avis)</div>
+    <div class="prix">13 800 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 4 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/04/73/49/04734930ec3a63e065a9e902af765b82.jpg" alt="Robe à Rayures Pastel">
+    <div class="product-title">Robe à Rayures Pastel</div>
+    <div class="product-description">Robe légère à rayures multicolores pastel pour un look frais.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(41 avis)</div>
+    <div class="prix">15 200 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 5 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/cc/14/9a/cc149aa5cc9a11b3fd126c09c5e8493a.jpg" alt="Robe Rouge Passion">
+    <div class="product-title">Robe Rouge Passion</div>
+    <div class="product-description">Robe mi-longue rouge éclatant, coupe ajustée pour un style glamour.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(50 avis)</div>
+    <div class="prix">18 000 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 6 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/bd/6a/31/bd6a31c58fb5f6cd94a70f987d21b9a3.jpg" alt="Robe Courte Fleurie">
+    <div class="product-title">Robe Courte Fleurie</div>
+    <div class="product-description">Robe courte à fleurs colorées, parfaite pour une journée ensoleillée.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(38 avis)</div>
+    <div class="prix">12 900 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 7 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/9f/3f/dc/9f3fdc379a7c2743c3a4a92892781d3f.jpg" alt="Robe Plissée Blanche">
+    <div class="product-title">Robe Plissée Blanche</div>
+    <div class="product-description">Robe midi plissée, élégante et confortable pour les soirées d’été.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(47 avis)</div>
+    <div class="prix">17 400 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 8 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/fd/6a/3d/fd6a3d9ff2d06c410aa192aeb95f5d68.jpg" alt="Robe Longue Plage">
+    <div class="product-title">Robe Longue Plage</div>
+    <div class="product-description">Robe fluide et légère, idéale pour se promener au bord de la mer.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(36 avis)</div>
+    <div class="prix">15 900 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 9 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/b5/6d/3a/b56d3aa8d6011e4f27222b02df06cbe8.jpg" alt="Robe Dos Nu">
+    <div class="product-title">Robe Dos Nu</div>
+    <div class="product-description">Robe dos nu en soie légère, parfaite pour un dîner romantique.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(44 avis)</div>
+    <div class="prix">19 200 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 10 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/2e/f3/12/2ef3123f5b2b7b942e4359c3d12d66df.jpg" alt="Robe Rose Pastel">
+    <div class="product-title">Robe Rose Pastel</div>
+    <div class="product-description">Robe courte rose pastel, coupe simple et élégante.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(40 avis)</div>
+    <div class="prix">13 500 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 11 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/2c/8f/63/2c8f634fa6221b3fc58dd26ad915a012.jpg" alt="Robe Blanche Dentelle">
+    <div class="product-title">Robe Blanche Dentelle</div>
+    <div class="product-description">Robe élégante en dentelle blanche, parfaite pour les occasions spéciales.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(53 avis)</div>
+    <div class="prix">20 000 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 12 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/e2/2d/ab/e22dab0d5b9d30834fdf40c67f88ab46.jpg" alt="Robe Verte Bohème">
+    <div class="product-title">Robe Verte Bohème</div>
+    <div class="product-description">Robe longue verte à imprimés, look bohème parfait pour l’été.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(37 avis)</div>
+    <div class="prix">16 500 FCFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+</div>
+
+  <!-- FOOTER -->
+  <!-- <footer>
+    <p>&copy; 2025 Look’n’Go. Tous droits réservés.</p>
+    <div class="socials">
+      <a href="#">Instagram</a> | <a href="#">Facebook</a>
+    </div>
+  </footer> -->
+
+
+<script>
+  function showQuantity(button) {
+    const btnGroup = button.parentElement;
+    const quantityControls = btnGroup.querySelector('.quantity-controls');
+
+    button.style.display = 'none';
+    quantityControls.style.display = 'flex';
+  }
+
+  function increaseQty(btn) {
+    const span = btn.parentElement.querySelector('span');
+    let count = parseInt(span.innerText) + 1;
+    span.innerText = count;
+
+    updateCartFromCard(btn.closest('.product-card'), count);
+  }
+
+  function decreaseQty(btn) {
+    const span = btn.parentElement.querySelector('span');
+    let count = parseInt(span.innerText) - 1;
+
+    if (count <= 0) {
+      const quantityControls = btn.parentElement;
+      const btnGroup = quantityControls.parentElement;
+      quantityControls.style.display = 'none';
+      btnGroup.querySelector('.btn').style.display = 'block';
+
+      removeFromCart(btn.closest('.product-card'));
+    } else {
+      span.innerText = count;
+      updateCartFromCard(btn.closest('.product-card'), count);
+    }
+  }
+
+  // Met à jour la quantité d'un produit déjà dans le panier
+  function updateCartFromCard(card, quantity) {
+    const titre = card.querySelector(".product-title").innerText;
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+    let produit = panier.find(p => p.titre === titre);
+    if (produit) {
+      produit.quantite = quantity;
+    } else {
+      const prixTexte = card.querySelector(".prix").innerText;
+      const prix = parseInt(prixTexte.replace(/[^\d]/g, '')); // "29 900 FCFA" -> 29900
+      const image = card.querySelector("img").getAttribute("src");
+
+      panier.push({
+        titre,
+        prix,
+        image,
+        quantite: quantity
+      });
+    }
+    localStorage.setItem("panier", JSON.stringify(panier));
+  }
+
+  // Supprime un produit du panier
+  function removeFromCart(card) {
+    const titre = card.querySelector(".product-title").innerText;
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+    panier = panier.filter(p => p.titre !== titre);
+    localStorage.setItem("panier", JSON.stringify(panier));
+  }
+
+  // Quand on clique sur "Ajouter au panier"
+  document.querySelectorAll(".product-card").forEach(card => {
+    const addButton = card.querySelector(".btn");
+    const quantitySpan = card.querySelector(".quantity-controls span");
+
+    addButton.addEventListener("click", () => {
+      const titre = card.querySelector(".product-title").innerText;
+      const prixTexte = card.querySelector(".prix").innerText;
+      const prix = parseInt(prixTexte.replace(/[^\d]/g, '')); // ✅ conversion
+      const image = card.querySelector("img").getAttribute("src");
+
+      const produit = {
+        titre,
+        prix,
+        image,
+        quantite: parseInt(quantitySpan.innerText)
+      };
+
+      let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+      // Vérifie si l'article existe déjà
+      const index = panier.findIndex(p => p.titre === titre);
+      if (index >= 0) {
+        panier[index].quantite += produit.quantite;
+      } else {
+        panier.push(produit);
+      }
+
+      localStorage.setItem("panier", JSON.stringify(panier));
+      alert("✅ Produit ajouté au panier !");
+    });
+  });
+</script>
+
+
+</body>
+</html>

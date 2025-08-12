@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chaussures de sport</title>
+    <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffffff, #f2f2ff, #fff0f5);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #333;
+    }
+
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-title {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #222;
+    }
+
+    .product-description {
+      font-size: 0.9em;
+      color: #666;
+      margin: 8px 0;
+    }
+
+    .stars {
+      color: #f5a623;
+      font-size: 1.1em;
+    }
+
+    .reviews {
+      font-size: 0.85em;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .btn-group {
+      margin-top: 10px;
+      position: relative;
+    }
+
+    
+
+    .btn-add:active {
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.btn-add.animate {
+  animation: bounce 0.3s ease;
+}
+
+    .quantity-controls {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 5px 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quantity-controls span {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 20px;
+    }
+
+    .header-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* espace entre titre et bouton */
+  margin: 90px 11%; /* même marge qu’avant pour garder l’emplacement */
+}
+
+.btn-retour-icon {
+  background: linear-gradient(to right, #ffa500, #ff5500);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 44px;
+  height: 44px;
+  border-radius: 20%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+        font-size: 1.1rem;
+      margin: 15px 0 5px;
+}
+
+.btn-retour-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(255, 85, 0, 0.5);
+}
+    .btn-retour-container {
+  margin: -10px 80px 10px 20px; /* remonte le bouton */
+}
+
+
+    .btn-add:active {
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.btn-add.animate {
+  animation: bounce 0.3s ease;
+}
+
+    .quantity-controls {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 5px 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quantity-controls span {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 20px;
+ }
+  </style>
+</head>
+<body>
+      <!-- HEADER -->
+  <header class="sticky">
+    <div class="logo">👟 Look’n’Go</div>
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="#produits">Produits</a></li>
+    <li><a href="#lookbook">Lookbook</a></li>
+    <li><a href="inscription.html">Inscription</a></li>
+  </ul>
+</nav>
+    <a href="panier.html" class="cart-btn" id="cart-btn">🛒</a>
+
+  </header>
+
+  <h1 style="text-align:center; font-size:2.2em; font-weight:bold; margin-bottom:10px; color:#222;">
+    Flex & Confort – Tee-shirts pour un style léger
+  </h1>
+  
+  <p style="text-align:center; font-size:1.1em; color:#555; max-width:800px; margin:0 auto 30px auto; line-height:1.5;">
+    Pour marcher léger et rester à l’aise toute la journée, découvrez notre collection de tee-shirts alliant confort, douceur et élégance décontractée.
+  </p>
+    <div class="btn-retour-container">
+  <button onclick="history.back()" class="btn-retour-icon" aria-label="Retour">
+    ←
+  </button>
+</div>
+
+<div class="product-container">
+<!-- Produit 1 -->
+<div class="product-card">
+    <img src="https://i.pinimg.com/736x/0a/64/3b/0a643b2a6a9ec4af83b5896cf14fc186.jpg" alt="Tee-shirt Coton Premium">
+    <div class="product-title">Tee-shirt Coton Premium</div>
+    <div class="product-description">Un basique élégant en coton doux, parfait pour un usage quotidien.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(42 avis)</div>
+    <div class="prix">8 500 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 2 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/a3/cc/86/a3cc86e6f1543d5477813e4e4cfd4af2.jpg" alt="Tee-shirt RelaxFit">
+    <div class="product-title">Tee-shirt RelaxFit</div>
+    <div class="product-description">Coupe ample et tissu respirant pour un confort maximal.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(58 avis)</div>
+    <div class="prix">9 200 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 3 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/d3/88/6e/d3886e8a9cfb2cbdc73c1f3b1f4a6a0b.jpg" alt="Tee-shirt SportyCool">
+    <div class="product-title">Tee-shirt SportyCool</div>
+    <div class="product-description">Léger et absorbant, idéal pour les journées actives.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(37 avis)</div>
+    <div class="prix">10 000 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 4 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/e0/f4/1b/e0f41b2d1fbe94662de2c624083e11fc.jpg" alt="Tee-shirt BreezeLight">
+    <div class="product-title">Tee-shirt BreezeLight</div>
+    <div class="product-description">Un tissu aéré pour un confort optimal même en été.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(44 avis)</div>
+    <div class="prix">8 900 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 5 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/d9/d0/fd/d9d0fdfc4ef3f8c7b0c2181e3f2d7134.jpg" alt="Tee-shirt UrbanFlex">
+    <div class="product-title">Tee-shirt UrbanFlex</div>
+    <div class="product-description">Parfait pour un style casual chic au quotidien.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(52 avis)</div>
+    <div class="prix">9 500 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 6 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/15/02/5b/15025b413fcfdb0ecb31e05a3941c83f.jpg" alt="Tee-shirt StreetSoft">
+    <div class="product-title">Tee-shirt StreetSoft</div>
+    <div class="product-description">Confort et style décontracté réunis en un seul modèle.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(39 avis)</div>
+    <div class="prix">8 700 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 7 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/14/9d/49/149d49f9b7e1cd5fd76fbe4e88490e86.jpg" alt="Tee-shirt EasyWear">
+    <div class="product-title">Tee-shirt EasyWear</div>
+    <div class="product-description">Simple et pratique, il s’adapte à toutes vos tenues.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(61 avis)</div>
+    <div class="prix">8 300 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 8 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/c7/aa/0b/c7aa0b4a97e2e7dbf3492795a9fbc5f0.jpg" alt="Tee-shirt LightMotion">
+    <div class="product-title">Tee-shirt LightMotion</div>
+    <div class="product-description">Tissu extensible pour une liberté de mouvement totale.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(48 avis)</div>
+    <div class="prix">9 800 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 9 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/5c/77/7b/5c777bb4997efc9ed469871dd1e8a3ff.jpg" alt="Tee-shirt ChillVibe">
+    <div class="product-title">Tee-shirt ChillVibe</div>
+    <div class="product-description">Style détendu avec un tissu ultra respirant.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(46 avis)</div>
+    <div class="prix">8 900 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 10 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/56/8a/13/568a13ad963caa16b7c01abf46eaf780.jpg" alt="Tee-shirt PureLine">
+    <div class="product-title">Tee-shirt PureLine</div>
+    <div class="product-description">Minimaliste et élégant pour toutes les occasions.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(54 avis)</div>
+    <div class="prix">9 400 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 11 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/64/25/30/64253055b205b7bc07e0b2b2e7a15592.jpg" alt="Tee-shirt FreshMood">
+    <div class="product-title">Tee-shirt FreshMood</div>
+    <div class="product-description">Une touche de fraîcheur pour un style décontracté.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(50 avis)</div>
+    <div class="prix">8 600 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 12 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/b0/44/d3/b044d327ea3cd331de38e6c33c97932a.jpg" alt="Tee-shirt DailySoft">
+    <div class="product-title">Tee-shirt DailySoft</div>
+    <div class="product-description">Confort absolu pour vos journées les plus chargées.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(63 avis)</div>
+    <div class="prix">9 000 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  <!-- FOOTER -->
+  <!-- <footer>
+    <p>&copy; 2025 Look’n’Go. Tous droits réservés.</p>
+    <div class="socials">
+      <a href="#">Instagram</a> | <a href="#">Facebook</a>
+    </div>
+  </footer> -->
+
+
+<script>
+  function showQuantity(button) {
+    const btnGroup = button.parentElement;
+    const quantityControls = btnGroup.querySelector('.quantity-controls');
+
+    button.style.display = 'none';
+    quantityControls.style.display = 'flex';
+  }
+
+  function increaseQty(btn) {
+    const span = btn.parentElement.querySelector('span');
+    let count = parseInt(span.innerText) + 1;
+    span.innerText = count;
+
+    updateCartFromCard(btn.closest('.product-card'), count);
+  }
+
+  function decreaseQty(btn) {
+    const span = btn.parentElement.querySelector('span');
+    let count = parseInt(span.innerText) - 1;
+
+    if (count <= 0) {
+      const quantityControls = btn.parentElement;
+      const btnGroup = quantityControls.parentElement;
+      quantityControls.style.display = 'none';
+      btnGroup.querySelector('.btn').style.display = 'block';
+
+      removeFromCart(btn.closest('.product-card'));
+    } else {
+      span.innerText = count;
+      updateCartFromCard(btn.closest('.product-card'), count);
+    }
+  }
+
+  // Met à jour la quantité d'un produit déjà dans le panier
+  function updateCartFromCard(card, quantity) {
+    const titre = card.querySelector(".product-title").innerText;
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+    let produit = panier.find(p => p.titre === titre);
+    if (produit) {
+      produit.quantite = quantity;
+    } else {
+      const prixTexte = card.querySelector(".prix").innerText;
+      const prix = parseInt(prixTexte.replace(/[^\d]/g, '')); // "29 900 FCFA" -> 29900
+      const image = card.querySelector("img").getAttribute("src");
+
+      panier.push({
+        titre,
+        prix,
+        image,
+        quantite: quantity
+      });
+    }
+    localStorage.setItem("panier", JSON.stringify(panier));
+  }
+
+  // Supprime un produit du panier
+  function removeFromCart(card) {
+    const titre = card.querySelector(".product-title").innerText;
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+    panier = panier.filter(p => p.titre !== titre);
+    localStorage.setItem("panier", JSON.stringify(panier));
+  }
+
+  // Quand on clique sur "Ajouter au panier"
+  document.querySelectorAll(".product-card").forEach(card => {
+    const addButton = card.querySelector(".btn");
+    const quantitySpan = card.querySelector(".quantity-controls span");
+
+    addButton.addEventListener("click", () => {
+      const titre = card.querySelector(".product-title").innerText;
+      const prixTexte = card.querySelector(".prix").innerText;
+      const prix = parseInt(prixTexte.replace(/[^\d]/g, '')); // ✅ conversion
+      const image = card.querySelector("img").getAttribute("src");
+
+      const produit = {
+        titre,
+        prix,
+        image,
+        quantite: parseInt(quantitySpan.innerText)
+      };
+
+      let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+      // Vérifie si l'article existe déjà
+      const index = panier.findIndex(p => p.titre === titre);
+      if (index >= 0) {
+        panier[index].quantite += produit.quantite;
+      } else {
+        panier.push(produit);
+      }
+
+      localStorage.setItem("panier", JSON.stringify(panier));
+      alert("✅ Produit ajouté au panier !");
+    });
+  });
+</script>
+
+
+</body>
+</html>

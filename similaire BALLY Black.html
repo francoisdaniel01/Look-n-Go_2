@@ -1,160 +1,131 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Produits Similaires - BALLY Black</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chaussures de sport</title>
+    <link rel="stylesheet" href="style.css">
+
   <style>
     body {
-      background: linear-gradient(to right, #fff8f3, #fcefe8);
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
+      background: linear-gradient(135deg, #ffffff, #f2f2ff, #fff0f5);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
-    .cart-btn {
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
-
-    .container {
-      max-width: 1600px;
-      margin: 0 auto;
-      padding: 40px 20px;
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
+      margin: 40px 0 20px;
       color: #333;
     }
 
-    .products-grid {
+    .product-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-    }
-
-    @media (max-width: 1024px) {
-      .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 500px) {
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .product-card {
       background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      padding: 15px;
       text-align: center;
-      transition: transform 0.2s ease;
+      transition: 0.3s;
     }
 
     .product-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
     }
 
     .product-card img {
-      width: 100%;
-      height: 300px;
+      max-width: 100%;
+      height: 280px;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 8px;
     }
 
     .product-title {
-      font-size: 1.1rem;
-      margin: 15px 0 5px;
+      font-weight: bold;
+      margin-top: 10px;
       color: #222;
     }
 
-    .product-price {
-      font-weight: bold;
-      color: #e85c4f;
-    }
-
     .product-description {
-      font-size: 0.95rem;
+      font-size: 0.9em;
       color: #666;
-      margin: 10px 0;
+      margin: 8px 0;
     }
 
-    .btn {
-      display: inline-block;
-      background: #ff6b6b;
-      color: white;
-      padding: 10px 18px;
+    .stars {
+      color: #f5a623;
+      font-size: 1.1em;
+    }
+
+    .reviews {
+      font-size: 0.85em;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .btn-group {
       margin-top: 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: background 0.2s ease;
+      position: relative;
+    }
+
+    
+
+    .btn-add:active {
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.btn-add.animate {
+  animation: bounce 0.3s ease;
+}
+
+    .quantity-controls {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 5px 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
       cursor: pointer;
     }
 
-    .btn:hover {
-      background: #e85757;
+    .quantity-controls span {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 20px;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #1f1a1a;
-      color: #ffffff;
-      margin-top: 40px;
-    }
-
-    .socials a {
-      color: #333;
-      margin: 0 8px;
-      text-decoration: none;
-    }
-    
-.header-title {
+    .header-title {
   display: flex;
   align-items: center;
   justify-content: space-between; /* espace entre titre et bouton */
@@ -226,39 +197,40 @@
       font-weight: bold;
       min-width: 20px;
  }
-
-
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header>
+      <!-- HEADER -->
+  <header class="sticky">
     <div class="logo">👟 Look’n’Go</div>
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="#produits">Produits</a></li>
-        <li><a href="#lookbook">Lookbook</a></li>
-        <li><a href="inscription.html">Inscription</a></li>X
-      </ul>
-    </nav>
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="#produits">Produits</a></li>
+    <li><a href="#lookbook">Lookbook</a></li>
+    <li><a href="inscription.html">Inscription</a></li>
+  </ul>
+</nav>
     <a href="panier.html" class="cart-btn" id="cart-btn">🛒</a>
-
-
 
   </header>
 
-  <!-- CONTENU PRINCIPAL -->
-  <div class="container">
-    <h1>Articles dans le même style</h1>
+  <h1 style="text-align:center; font-size:2.2em; font-weight:bold; margin-bottom:10px; color:#222;">
+    Chaussures Élégantes – Raffinement & Confort
+  </h1>
+  
+  <p style="text-align:center; font-size:1.1em; color:#555; max-width:800px; margin:0 auto 30px auto; line-height:1.5;">
+    Explorez notre gamme de chaussures premium, conçues en cuir de qualité pour allier élégance, durabilité et confort au quotidien.
+  </p>
+  
+  
     <div class="btn-retour-container">
   <button onclick="history.back()" class="btn-retour-icon" aria-label="Retour">
     ←
   </button>
 </div>
 
-    <div class="products-grid">
+<div class="product-container">
 <!-- Produit 1 -->
 <div class="product-card" 
      data-titre="Oxford Élégance" 
@@ -410,8 +382,93 @@
   </div>
 </div>
 
+<!-- Produit 9 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/736x/18/33/50/1833502a2c9ff62b9980b1f78f1b888b.jpg" alt="Chaussure Classique Marron">
+  <div class="product-title">Classic Brown</div>
+  <div class="product-description">Chaussures élégantes en cuir marron, confortables et parfaites pour le bureau.</div>
+  <div class="stars">⭐⭐⭐⭐☆</div>
+  <div class="reviews">(54 avis)</div>
+  <div class="prix">34 500 FCFA</div>
+  <div class="btn-group">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
+    </div>
+  </div>
+</div>
 
-  <!-- SCRIPT: Ajouter au panier -->
+<!-- Produit 10 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/736x/24/99/5a/24995aa176210b47f4e047b16bcb6564.jpg" alt="Chaussure Loafer Noir">
+  <div class="product-title">Loafer Noir Élégance</div>
+  <div class="product-description">Mocassins noirs en cuir souple, parfaits pour un style décontracté chic.</div>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <div class="reviews">(48 avis)</div>
+  <div class="prix">32 000 FCFA</div>
+  <div class="btn-group">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit 11 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/736x/d2/3f/34/d23f347c679dc819e90a312d6071593f.jpg" alt="Chaussure Derby Gris">
+  <div class="product-title">Derby Gris Luxe</div>
+  <div class="product-description">Chaussures derby en cuir gris, look moderne et raffiné.</div>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <div class="reviews">(52 avis)</div>
+  <div class="prix">38 000 FCFA</div>
+  <div class="btn-group">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Produit 12 -->
+<div class="product-card">
+  <img src="https://i.pinimg.com/736x/1a/12/4b/1a124b8a82f667c56386b3c10e90ddaf.jpg" alt="Chaussure Oxford Marine">
+  <div class="product-title">Oxford Marine</div>
+  <div class="product-description">Chaussures Oxford bleu marine en cuir brillant, idéales pour un look sophistiqué.</div>
+  <div class="stars">⭐⭐⭐⭐☆</div>
+  <div class="reviews">(61 avis)</div>
+  <div class="prix">40 000 FCFA</div>
+  <div class="btn-group">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
+      <button onclick="decreaseQty(this)">➖</button>
+      <span>1</span>
+      <button onclick="increaseQty(this)">➕</button>
+    </div>
+  </div>
+</div>
+  
+  
+
+
+</div>
+
+  <!-- FOOTER -->
+  <!-- <footer>
+    <p>&copy; 2025 Look’n’Go. Tous droits réservés.</p>
+    <div class="socials">
+      <a href="#">Instagram</a> | <a href="#">Facebook</a>
+    </div>
+  </footer> -->
+
+
 <script>
   function showQuantity(button) {
     const btnGroup = button.parentElement;
@@ -510,9 +567,6 @@
     });
   });
 </script>
-
-
-
 
 
 </body>

@@ -103,6 +103,7 @@
     }
 
     /* PRODUITS */
+
     .product-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -220,6 +221,10 @@
       display: inline-block;
       text-align: center;
     }
+
+
+
+    
   </style>
 </head>
 <body>
@@ -248,7 +253,7 @@
   <div class="product-container" id="produits">
     <!-- Produit 1 -->
     <div class="product-card">
-      <img src="https://i.pinimg.com/736x/58/50/b6/5850b6d9f8d8afc4bfa6e0ad0f9153b1.jpg" alt="Tenue Streetwear Classique" />
+      <img src="https://i.pinimg.com/1200x/ac/0e/2e/ac0e2e73443347f76257a1879d5ec426.jpg" alt="Tenue Streetwear Classique" />
       <div class="product-title">Tenue Streetwear Classique</div>
       <div class="product-description">Ensemble t-shirt oversize et pantalon cargo pour un style urbain décontracté parfait pour le quotidien.</div>
       <div class="stars">⭐⭐⭐⭐☆</div>
@@ -266,7 +271,7 @@
 
     <!-- Produit 2 -->
     <div class="product-card">
-      <img src="https://i.pinimg.com/736x/43/cb/ea/43cbea2b624b60cf5d977d91e41a4cf3.jpg" alt="Ensemble Hoodie & Jogger" />
+      <img src="https://i.pinimg.com/1200x/cc/74/6d/cc746dafc09c6ff57bfcb7078b132222.jpg" alt="Ensemble Hoodie & Jogger" />
       <div class="product-title">Ensemble Hoodie & Jogger</div>
       <div class="product-description">Sweat à capuche molletonné et jogging assorti pour un look streetwear confortable et tendance.</div>
       <div class="stars">⭐⭐⭐⭐⭐</div>
@@ -284,7 +289,7 @@
 
     <!-- Produit 3 -->
     <div class="product-card">
-      <img src="https://i.pinimg.com/736x/13/bd/48/13bd4847d66a9db1ff7a6ed788bb2d8e.jpg" alt="Look Urbain Denim" />
+      <img src="https://i.pinimg.com/736x/b4/79/29/b479295e6c3bd1220cdee5c0ef29a2e5.jpg" alt="Look Urbain Denim" />
       <div class="product-title">Look Urbain Denim</div>
       <div class="product-description">Veste en jean oversize et pantalon slim pour un style urbain intemporel et élégant.</div>
       <div class="stars">⭐⭐⭐⭐⭐</div>
@@ -302,7 +307,7 @@
 
     <!-- Produit 4 -->
     <div class="product-card">
-      <img src="https://i.pinimg.com/736x/3b/3d/3d/3b3d3d84f963ae0f91499ad8a6cb6a2e.jpg" alt="Set Urbain Oversize" />
+      <img src="https://i.pinimg.com/736x/31/a9/90/31a9909bae0f4083488ddd3168044fc1.jpg" alt="Set Urbain Oversize" />
       <div class="product-title">Set Urbain Oversize</div>
       <div class="product-description">T-shirt oversize et short large pour un look streetwear respirant et moderne.</div>
       <div class="stars">⭐⭐⭐⭐☆</div>
@@ -317,6 +322,151 @@
         </div>
       </div>
     </div>
+
+    <!-- Produit 5 -->
+<div class="product-card">
+    <img src="https://i.pinimg.com/736x/cb/4f/80/cb4f80b5836517ced604229677494e78.jpg" alt="Produit 5 - Ensemble Décontracté" />
+    <div class="product-title">Ensemble Décontracté</div>
+    <div class="product-description">T-shirt doux et pantalon fluide pour un confort quotidien.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(40 avis)</div>
+    <div class="prix">16 000 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 6 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/1200x/75/1b/76/751b7613dafcb7f4464ffb5a83b4592b.jpg" alt="Produit 6 - Set Urbain Chic" />
+    <div class="product-title">Set Urbain Chic</div>
+    <div class="product-description">Chemise légère et pantalon coupe droite, look élégant et moderne.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(33 avis)</div>
+    <div class="prix">20 500 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 7 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/1200x/4b/58/b3/4b58b39dff6e80e1d72016edbc1aea37.jpg" alt="Produit 7 - Ensemble Sporty" />
+    <div class="product-title">Ensemble Sporty</div>
+    <div class="product-description">Sweat à capuche et short ample pour un style sportif et tendance.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(51 avis)</div>
+    <div class="prix">18 200 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 8 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/1200x/a7/7f/1e/a77f1e4d2669a14c21b5cfa6dd8ed3c7.jpg" alt="Produit 8 - Set Détente Été" />
+    <div class="product-title">Set Détente Été</div>
+    <div class="product-description">Débardeur léger et short en coton, parfait pour les journées chaudes.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(29 avis)</div>
+    <div class="prix">13 500 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 9 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/be/25/de/be25dedd029e3aee812b8b3989902426.jpg" alt="Produit 9 - Ensemble Premium" />
+    <div class="product-title">Ensemble Premium</div>
+    <div class="product-description">Sweat léger et pantalon jogging en coton bio pour un style haut de gamme.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(63 avis)</div>
+    <div class="prix">22 000 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 10 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/1200x/70/68/f7/7068f74f0bce5a46cd8d1d1444903630.jpg" alt="Produit 10 - Set Casual Chic" />
+    <div class="product-title">Set Casual Chic</div>
+    <div class="product-description">Chemise fluide et pantalon ajusté pour un style semi-formel.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(46 avis)</div>
+    <div class="prix">19 800 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 11 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/1200x/e8/2f/03/e82f03f924de8ff3332e343da14cac94.jpg" alt="Produit 11 - Ensemble Relax" />
+    <div class="product-title">Ensemble Relax</div>
+    <div class="product-description">T-shirt col rond et short stretch pour une liberté de mouvement maximale.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(38 avis)</div>
+    <div class="prix">14 900 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 12 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/1200x/04/f3/43/04f34310f547a7b9f1db964e843be0e8.jpg" alt="Produit 12 - Set Street Luxe" />
+    <div class="product-title">Set Street Luxe</div>
+    <div class="product-description">Sweat oversize et pantalon cargo, parfait pour un style urbain premium.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(57 avis)</div>
+    <div class="prix">23 500 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
   </div>
 
   <script>

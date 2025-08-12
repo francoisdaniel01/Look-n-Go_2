@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chaussures de sport</title>
+    <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffffff, #f2f2ff, #fff0f5);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #333;
+    }
+
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-title {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #222;
+    }
+
+    .product-description {
+      font-size: 0.9em;
+      color: #666;
+      margin: 8px 0;
+    }
+
+    .stars {
+      color: #f5a623;
+      font-size: 1.1em;
+    }
+
+    .reviews {
+      font-size: 0.85em;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .btn-group {
+      margin-top: 10px;
+      position: relative;
+    }
+
+    
+
+    .btn-add:active {
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.btn-add.animate {
+  animation: bounce 0.3s ease;
+}
+
+    .quantity-controls {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 5px 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quantity-controls span {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 20px;
+    }
+
+    .header-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* espace entre titre et bouton */
+  margin: 90px 11%; /* même marge qu’avant pour garder l’emplacement */
+}
+
+.btn-retour-icon {
+  background: linear-gradient(to right, #ffa500, #ff5500);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 44px;
+  height: 44px;
+  border-radius: 20%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+        font-size: 1.1rem;
+      margin: 15px 0 5px;
+}
+
+.btn-retour-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(255, 85, 0, 0.5);
+}
+    .btn-retour-container {
+  margin: -10px 80px 10px 20px; /* remonte le bouton */
+}
+
+
+    .btn-add:active {
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.btn-add.animate {
+  animation: bounce 0.3s ease;
+}
+
+    .quantity-controls {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none;
+      color: white;
+      padding: 5px 12px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quantity-controls span {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 20px;
+ }
+  </style>
+</head>
+<body>
+      <!-- HEADER -->
+  <header class="sticky">
+    <div class="logo">👟 Look’n’Go</div>
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="#produits">Produits</a></li>
+    <li><a href="#lookbook">Lookbook</a></li>
+    <li><a href="inscription.html">Inscription</a></li>
+  </ul>
+</nav>
+    <a href="panier.html" class="cart-btn" id="cart-btn">🛒</a>
+
+  </header>
+
+  <h1 style="text-align:center; font-size:2.2em; font-weight:bold; margin-bottom:10px; color:#222;">
+    Sneakers Modernes – L’Essence du Style Urbain
+  </h1>
+  
+  <p style="text-align:center; font-size:1.1em; color:#555; max-width:800px; margin:0 auto 30px auto; line-height:1.5;">
+    Découvrez notre sélection de sneakers tendance, alliant design innovant et confort exceptionnel pour un look streetwear affirmé.
+  </p>
+  
+    <div class="btn-retour-container">
+  <button onclick="history.back()" class="btn-retour-icon" aria-label="Retour">
+    ←
+  </button>
+</div>
+
+<div class="product-container">
+<!-- Produit 1 -->
+<div class="product-card">
+    <img src="https://i.pinimg.com/736x/6b/10/fc/6b10fc16cf90278d611cc9dfc2627b5f.jpg" alt="Sneakers Minimal Blanc">
+    <div class="product-title">Sneakers Minimal Blanc</div>
+    <div class="product-description">Design épuré et semelle légère pour un style urbain chic en toute simplicité.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(52 avis)</div>
+    <div class="prix">25 900 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 2 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/f1/1f/d4/f11fd42ff6e93294c8c4a22142a26642.jpg" alt="High-Top Street Noir">
+    <div class="product-title">High-Top Street Noir</div>
+    <div class="product-description">Sneakers montantes noires avec détails en cuir pour un look street affirmé.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(48 avis)</div>
+    <div class="prix">28 500 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 3 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/fc/3d/5c/fc3d5c843152540df4bb88b847569d14.jpg" alt="Sneakers Pastel Vibes">
+    <div class="product-title">Sneakers Pastel Vibes</div>
+    <div class="product-description">Couleurs douces et tendance pour un look urbain frais et décontracté.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(35 avis)</div>
+    <div class="prix">26 900 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 4 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/e0/91/da/e091dae80a14f6f203b5bc62d69e6c4c.jpg" alt="Chunky Retro Beige">
+    <div class="product-title">Chunky Retro Beige</div>
+    <div class="product-description">Semelle épaisse et allure rétro pour un style streetwear assumé.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(41 avis)</div>
+    <div class="prix">29 200 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 5 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/f8/7e/2b/f87e2b0c50cf8753a9e41e3b0c17c3f5.jpg" alt="Sneakers Color Pop">
+    <div class="product-title">Sneakers Color Pop</div>
+    <div class="product-description">Touches de couleur vive pour dynamiser vos tenues urbaines.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(57 avis)</div>
+    <div class="prix">27 800 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 6 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/ff/42/46/ff4246e23c2d6f8edc6c502f6f5d3c2a.jpg" alt="Urban Glow Noir & Or">
+    <div class="product-title">Urban Glow Noir & Or</div>
+    <div class="product-description">Alliance de noir profond et détails dorés pour un style luxueux.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(64 avis)</div>
+    <div class="prix">31 000 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 7 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/62/b7/7a/62b77a85bc8999a59c67b69e1c858b8e.jpg" alt="Graffiti Street Art">
+    <div class="product-title">Graffiti Street Art</div>
+    <div class="product-description">Design artistique et coloré inspiré des murs urbains.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(46 avis)</div>
+    <div class="prix">28 900 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 8 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/8c/63/d2/8c63d24cf5e10d6e85a4d6e37473c2e4.jpg" alt="Sneakers Denim Style">
+    <div class="product-title">Sneakers Denim Style</div>
+    <div class="product-description">Tissu jean et finitions modernes pour un look casual chic.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(38 avis)</div>
+    <div class="prix">26 500 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 9 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/6b/b1/5b/6bb15b60e7a5a5cc4449046b410083b7.jpg" alt="White Luxe Edition">
+    <div class="product-title">White Luxe Edition</div>
+    <div class="product-description">Blanc éclatant et finitions haut de gamme pour un look impeccable.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(50 avis)</div>
+    <div class="prix">32 000 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 10 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/cb/84/c2/cb84c2121d04dc8737c2cb1f9b20b403.jpg" alt="Retro Court Vision">
+    <div class="product-title">Retro Court Vision</div>
+    <div class="product-description">Inspirées des terrains de basket vintage pour un style old-school.</div>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="reviews">(42 avis)</div>
+    <div class="prix">27 400 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 11 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/7d/b2/e3/7db2e3fba9f7400c6f2c32d98cb302dd.jpg" alt="Neon Pulse">
+    <div class="product-title">Neon Pulse</div>
+    <div class="product-description">Détails néon éclatants pour briller dans les rues la nuit.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(33 avis)</div>
+    <div class="prix">30 500 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 12 -->
+  <div class="product-card">
+    <img src="https://i.pinimg.com/736x/e5/60/3b/e5603bb4b9eb02d707a19d354a9915cc.jpg" alt="Urban Shadow">
+    <div class="product-title">Urban Shadow</div>
+    <div class="product-description">Noir intégral et silhouette épurée pour un style mystérieux et classe.</div>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews">(59 avis)</div>
+    <div class="prix">29 900 F CFA</div>
+    <div class="btn-group">
+      <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+      <div class="quantity-controls">
+        <button onclick="decreaseQty(this)">➖</button>
+        <span>1</span>
+        <button onclick="increaseQty(this)">➕</button>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+</div>
+
+  <!-- FOOTER -->
+  <!-- <footer>
+    <p>&copy; 2025 Look’n’Go. Tous droits réservés.</p>
+    <div class="socials">
+      <a href="#">Instagram</a> | <a href="#">Facebook</a>
+    </div>
+  </footer> -->
+
+
+<script>
+  function showQuantity(button) {
+    const btnGroup = button.parentElement;
+    const quantityControls = btnGroup.querySelector('.quantity-controls');
+
+    button.style.display = 'none';
+    quantityControls.style.display = 'flex';
+  }
+
+  function increaseQty(btn) {
+    const span = btn.parentElement.querySelector('span');
+    let count = parseInt(span.innerText) + 1;
+    span.innerText = count;
+
+    updateCartFromCard(btn.closest('.product-card'), count);
+  }
+
+  function decreaseQty(btn) {
+    const span = btn.parentElement.querySelector('span');
+    let count = parseInt(span.innerText) - 1;
+
+    if (count <= 0) {
+      const quantityControls = btn.parentElement;
+      const btnGroup = quantityControls.parentElement;
+      quantityControls.style.display = 'none';
+      btnGroup.querySelector('.btn').style.display = 'block';
+
+      removeFromCart(btn.closest('.product-card'));
+    } else {
+      span.innerText = count;
+      updateCartFromCard(btn.closest('.product-card'), count);
+    }
+  }
+
+  // Met à jour la quantité d'un produit déjà dans le panier
+  function updateCartFromCard(card, quantity) {
+    const titre = card.querySelector(".product-title").innerText;
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+    let produit = panier.find(p => p.titre === titre);
+    if (produit) {
+      produit.quantite = quantity;
+    } else {
+      const prixTexte = card.querySelector(".prix").innerText;
+      const prix = parseInt(prixTexte.replace(/[^\d]/g, '')); // "29 900 FCFA" -> 29900
+      const image = card.querySelector("img").getAttribute("src");
+
+      panier.push({
+        titre,
+        prix,
+        image,
+        quantite: quantity
+      });
+    }
+    localStorage.setItem("panier", JSON.stringify(panier));
+  }
+
+  // Supprime un produit du panier
+  function removeFromCart(card) {
+    const titre = card.querySelector(".product-title").innerText;
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+    panier = panier.filter(p => p.titre !== titre);
+    localStorage.setItem("panier", JSON.stringify(panier));
+  }
+
+  // Quand on clique sur "Ajouter au panier"
+  document.querySelectorAll(".product-card").forEach(card => {
+    const addButton = card.querySelector(".btn");
+    const quantitySpan = card.querySelector(".quantity-controls span");
+
+    addButton.addEventListener("click", () => {
+      const titre = card.querySelector(".product-title").innerText;
+      const prixTexte = card.querySelector(".prix").innerText;
+      const prix = parseInt(prixTexte.replace(/[^\d]/g, '')); // ✅ conversion
+      const image = card.querySelector("img").getAttribute("src");
+
+      const produit = {
+        titre,
+        prix,
+        image,
+        quantite: parseInt(quantitySpan.innerText)
+      };
+
+      let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+      // Vérifie si l'article existe déjà
+      const index = panier.findIndex(p => p.titre === titre);
+      if (index >= 0) {
+        panier[index].quantite += produit.quantite;
+      } else {
+        panier.push(produit);
+      }
+
+      localStorage.setItem("panier", JSON.stringify(panier));
+      alert("✅ Produit ajouté au panier !");
+    });
+  });
+</script>
+
+
+</body>
+</html>
