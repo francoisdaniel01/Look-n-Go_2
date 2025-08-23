@@ -104,7 +104,6 @@ function showQuantity(button) {
       }
 
       localStorage.setItem("panier", JSON.stringify(panier));
-      alert("✅ Produit ajouté au panier !");
     });
   });
   
@@ -144,6 +143,16 @@ lookRight.addEventListener('click', () => {
   lookInterval = setInterval(lookbookAutoScroll, 3000);
 });
 
+// script.js
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("produits.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("produits-container").innerHTML = data;
+    })
+    .catch(error => console.error("Erreur lors du chargement :", error));
+});
+
   
   // --- SLIDER AUTOMATIQUE LOOKBOOK ---
   const slider = document.getElementById('lookbookSlider');
@@ -158,5 +167,7 @@ lookRight.addEventListener('click', () => {
   }, 3000);
   
 
+
+  
 
   

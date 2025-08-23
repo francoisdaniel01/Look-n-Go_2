@@ -102,7 +102,7 @@
 }
 
     .quantity-controls {
-      display: none;
+      display: none;              
       justify-content: center;
       align-items: center;
       gap: 15px;
@@ -211,8 +211,11 @@
     <li><a href="inscription.html">Inscription</a></li>
   </ul>
 </nav>
-    <a href="panier.html" class="cart-btn" id="cart-btn">🛒</a>
+<a href="panier.html" class="cart-btn" id="cart-btn">
+  <img src="https://i.pinimg.com/736x/6f/d2/2e/6fd22e06b8a28e0f2917461c16a99fc8.jpg" alt="Panier" width="30" height="30">
+</a>
 
+ 
   </header>
 
   <h1 style="text-align:center; font-size:2.2em; font-weight:bold; margin-bottom:10px; color:#222;">
@@ -491,7 +494,7 @@
     } else {
       span.innerText = count;
       updateCartFromCard(btn.closest('.product-card'), count);
-    }
+    } 
   }
 
   // Met à jour la quantité d'un produit déjà dans le panier

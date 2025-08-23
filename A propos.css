@@ -1,0 +1,364 @@
+body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #f5f6fa;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #e66f00;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #e66f00;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #e66f00, #ff6b3d);
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    section p {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* VALEURS */
+    .valeurs-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .valeur-card {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      width: 250px;
+      transition: transform 0.3s;
+    }
+
+    .valeur-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .valeur-card i {
+      color: #e66f00;
+      margin-bottom: 15px;
+    }
+
+    /* EQUIPE */
+    .team-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .team-member {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      width: 220px;
+    }
+
+    .team-member img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    /* SECTION VISION */
+.vision {
+  background: url('images/vision-bg.jpg') center/cover no-repeat;
+  padding: 100px 20px;
+  color: #fff;
+  position: relative;
+}
+
+.vision-overlay {
+  background: linear-gradient(to right, #ff4d4d, #ff914d);
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+.vision h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #ffffff; /* un orange plus clair pour contraster */
+}
+
+.vision p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  
+}
+
+
+    /* PAIEMENTS */
+    .paiements-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .paiement-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      width: 150px;
+      transition: transform 0.3s;
+    }
+
+    .paiement-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .paiement-card i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #e66f00;
+    }
+
+    /* CHIFFRES CLÉS */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .stat {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      width: 200px;
+    }
+
+    .stat h3 {
+      font-size: 2rem;
+      color: #e66f00;
+      margin: 0 0 10px;
+    }
+
+    .stat p {
+      margin: 0;
+      color: #555;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* FAQ */
+.faq {
+  padding: 80px 20px;
+  background: #f5f6fa;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #222;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.faq-item {
+  max-width: 800px;
+  margin: 15px auto;
+  text-align: left;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.faq-item h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #e66f00;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 10px;
+  display: none; /* caché par défaut */
+  line-height: 1.6;
+  align-items: center;
+
+}
+
+/* TEMOIGNAGES CLIENTS */
+.temoignages {
+  padding: 80px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.temoignages h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+.temoignages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.temoignage-card {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.temoignage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.temoignage-card p {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.temoignage-card h4 {
+  font-weight: 600;
+  color: #e66f00;
+}
+
+
+
+
+.rc {
+    display: flex;         /* Active le mode flex */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement */
+    gap: 5px;
+  
+    
+  }
+
+
+
+  .btn-retour-icon {
+    background: linear-gradient(to right, #fcfcfc, #c9c2be);
+    border: none;
+    color: rgb(215, 61, 0);
+    font-size: 1.4rem;
+    font-weight: bold;
+    width: 44px;
+    height: 44px;
+    border-radius: 20%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(245, 245, 245, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+          font-size: 1.1rem;
+        margin: 15px 0 5px;
+  }
+  
+  .btn-retour-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(65, 34, 19, 0.5);
+  }
+      .btn-retour-container {
+    margin: -10px 80px 10px 20px; /* remonte le bouton */
+  }
+  
+  
+      .btn-add:active {
+    transform: scale(0.95);
+  }

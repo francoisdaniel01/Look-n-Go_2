@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion</title>
+  <title>Inscription</title>
   <link rel="stylesheet" href="inscription.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-
   <div class="container">
     <div class="btn-retour">
-      <button onclick="history.back()" class="btn-retour-icon" aria-label="Retour"> ←
-      </button>
-    </div>
-    <h2><i class="fa-solid fa-right-to-bracket"></i> Connexion</h2>
+        <button onclick="history.back()" class="btn-retour-icon" aria-label="Retour"> ←
+        </button>
+      </div>
+    <h2><i class="fa-solid fa-user-plus"></i> Inscription</h2>
     <form action="profil.html" method="post">
+      <div class="input-box">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" placeholder="Nom complet" required>
+      </div>
       <div class="input-box">
         <i class="fa-solid fa-envelope"></i>
         <input type="email" placeholder="Email" required>
@@ -25,10 +27,11 @@
         <i class="fa-solid fa-lock"></i>
         <input type="password" placeholder="Mot de passe" required>
       </div>
-      <button type="submit" class="btn">Se connecter</button>
+     
+      <button type="submit" class="btn">Créer un compte</button>
 
       <div class="alt-login">
-        <p>Ou se connecter avec</p>
+        <p>Ou s’inscrire avec</p>
         <div class="socials">
           <button type="button"><i class="fa-brands fa-google"></i></button>
           <button type="button"><i class="fa-brands fa-facebook"></i></button>
@@ -36,11 +39,10 @@
         </div>
       </div>
 
-      <p class="switch-page">Pas encore de compte ? 
-        <a href="register.html">Créer un compte</a>
+      <p class="switch-page">Déjà un compte ? 
+        <a href="inscription.html">Se connecter</a>
       </p>
     </form>
   </div>
 </body>
 </html>
-

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panier - Look’n’Go</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffffff, #f2f2ff, #fff0f5);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 11%;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      user-select: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    nav ul li a:hover {
+      color: #ff6a00;
+    }
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #333;
+    }
+    .panier-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #f5a623;
+      color: white;
+    }
+    img.product-img {
+      width: 80px; height: 80px; object-fit: cover; border-radius: 8px;
+    }
+    .qty-controls button {
+      background: linear-gradient(to right, #ff4d4d, #ff914d);
+      border: none; color: white; padding: 5px 10px;
+      border-radius: 5px; cursor: pointer; margin: 0 5px;
+    }
+    .remove-btn {
+      background: #ff4444; border: none; color: white;
+      padding: 8px 12px; border-radius: 5px; cursor: pointer;
+    }
+    .total-row td { font-weight: bold; font-size: 1.2em; color: #222; }
+    .empty-message { text-align: center; font-size: 1.2em; color: #666; padding: 40px 0; }
+
+    /* Boutons principaux */
+    .btn-valider, .btn-supprimer {
+      font-size: 1.2rem; padding: 12px 30px; border: none;
+      border-radius: 8px; cursor: pointer; font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .btn-valider {
+      background: linear-gradient(to right, #12bd48, #069433); color: white;
+      box-shadow: 0 4px 8px rgba(0, 128, 0, 0.4);
+    }
+    .btn-supprimer {
+      background: linear-gradient(to right, #ff4d4d, #d10000); color: white;
+      box-shadow: 0 4px 8px rgba(209, 0, 0, 0.6);
+    }
+
+    /* Modal Paiement */
+    .modal {
+      display: none; position: fixed; z-index: 200;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6); justify-content: center; align-items: center;
+    }
+    .modal-content {
+      background: #fff; padding: 20px; border-radius: 10px;
+      width: 400px; max-width: 95%; text-align: center;
+    }
+    .modal-content input {
+      width: 90%; padding: 10px; margin: 10px 0;
+      border: 1px solid #ccc; border-radius: 6px;
+    }
+    .close {
+      float: right; font-size: 1.5rem; cursor: pointer; color: red;
+    }
+    .submit-btn {
+      background: linear-gradient(to right, #12bd48, #069433);
+      color: white; padding: 12px 30px; border: none;
+      border-radius: 8px; cursor: pointer; font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">👟 Look’n’Go</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#produits">Produits</a></li>
+        <li><a href="index.html#lookbook">Lookbook</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Votre Panier</h1>
+  <div class="panier-container" id="panier-container"></div>
+
+  <div style="text-align:center; margin:20px;">
+    <button id="btn-valider" class="btn-valider">Valider le panier et payer</button>
+    <button id="btn-supprimer" class="btn-supprimer">Supprimer le panier</button>
+  </div>
+
+  <!-- Modal Paiement -->
+  <div id="paymentModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Paiement sécurisé</h2>
+      <form id="formPaiement">
+        <input type="text" placeholder="Nom complet" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" maxlength="16" placeholder="Numéro de carte" required>
+        <input type="month" required>
+        <input type="text" maxlength="3" placeholder="CVV" required>
+        <button type="submit" class="submit-btn">Payer</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // --- Gestion Panier (localStorage déjà existant) ---
+    function getPanier(){ return JSON.parse(localStorage.getItem("panier")) || []; }
+    function setPanier(panier){ localStorage.setItem("panier", JSON.stringify(panier)); }
+
+    function afficherPanier(){
+      const panier = getPanier();
+      const container = document.getElementById("panier-container");
+      container.innerHTML = '';
+      if(panier.length === 0){ container.innerHTML = '<p class="empty-message">Votre panier est vide.</p>'; return; }
+
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      thead.innerHTML = `<tr><th>Produit</th><th>Prix</th><th>Quantité</th><th>Sous-total</th><th>Action</th></tr>`;
+      table.appendChild(thead);
+
+      const tbody = document.createElement('tbody');
+      let total = 0;
+      panier.forEach((p,i)=>{
+        let sousTotal = p.prix * p.quantite; total += sousTotal;
+        tbody.innerHTML += `
+          <tr>
+            <td><img class="product-img" src="${p.image}" alt="${p.titre}"> ${p.titre}</td>
+            <td>${p.prix.toLocaleString()} F CFA</td>
+            <td>
+              <div class="qty-controls">
+                <button onclick="modifierQuantite(${i},-1)">-</button>
+                ${p.quantite}
+                <button onclick="modifierQuantite(${i},1)">+</button>
+              </div>
+            </td>
+            <td>${sousTotal.toLocaleString()} F CFA</td>
+            <td><button class="remove-btn" onclick="supprimerProduit(${i})">Supprimer</button></td>
+          </tr>`;
+      });
+      table.appendChild(tbody);
+
+      table.innerHTML += `<tfoot><tr class="total-row"><td colspan="3">Total</td><td colspan="2">${total.toLocaleString()} F CFA</td></tr></tfoot>`;
+      container.appendChild(table);
+    }
+
+    function modifierQuantite(i,d){ let p=getPanier(); p[i].quantite+=d; if(p[i].quantite<=0) p.splice(i,1); setPanier(p); afficherPanier(); }
+    function supprimerProduit(i){ let p=getPanier(); p.splice(i,1); setPanier(p); afficherPanier(); }
+
+    // --- Paiement Modal ---
+    const modal=document.getElementById("paymentModal");
+    const btn=document.getElementById("btn-valider");
+    const close=document.querySelector(".close");
+
+    btn.onclick=()=>{ if(getPanier().length===0){ alert("Votre panier est vide"); } else { modal.style.display="flex"; } };
+    close.onclick=()=> modal.style.display="none";
+    window.onclick=(e)=>{ if(e.target===modal) modal.style.display="none"; };
+
+    document.getElementById("formPaiement").addEventListener("submit", e=>{
+      e.preventDefault();
+      alert("✅ Paiement validé. Merci pour votre achat !");
+      localStorage.removeItem("panier");
+      modal.style.display="none";
+      afficherPanier();
+    });
+
+    document.getElementById("btn-supprimer").onclick=()=>{ localStorage.removeItem("panier"); afficherPanier(); };
+
+    afficherPanier();
+  </script>
+</body>
+</html>

@@ -211,8 +211,11 @@
     <li><a href="inscription.html">Inscription</a></li>
   </ul>
 </nav>
-    <a href="panier.html" class="cart-btn" id="cart-btn">🛒</a>
+<a href="panier.html" class="cart-btn" id="cart-btn">
+  <img src="https://i.pinimg.com/736x/6f/d2/2e/6fd22e06b8a28e0f2917461c16a99fc8.jpg" alt="Panier" width="30" height="30">
+</a>
 
+ 
   </header>
 
   <h1 style="text-align:center; font-size:2.2em; font-weight:bold; margin-bottom:10px; color:#222;">
@@ -232,22 +235,16 @@
 
 <div class="product-container">
 <!-- Produit 1 -->
-<div class="product-card" 
-     data-titre="Oxford Élégance" 
-     data-prix="29900" 
-     data-image="https://i.pinimg.com/1200x/e7/c6/30/e7c63059777d69c64bd00f3782752957.jpg">
-  
-  <img src="https://i.pinimg.com/1200x/e7/c6/30/e7c63059777d69c64bd00f3782752957.jpg" alt="Oxford Noir">
-  
-  <div class="product-title">Oxford Élégance</div>
-  <div class="product-description">Chaussures formelles noires avec une touche brillante pour les grands rendez-vous.</div>
-  <div class="stars">⭐⭐⭐⭐☆</div>
-  <div class="reviews">(42 avis)</div>
-  <div class="prix">29 900 FCFA</div>
-  
+<div class="product-card">
+  <img src="https://i.pinimg.com/1200x/e7/c6/30/e7c63059777d69c64bd00f3782752957.jpg" alt="Loafers cuir noir">
+  <div class="product-title">Loafers Prestige</div>
+  <div class="product-description">Classiques et confortables, parfaites pour le bureau ou les événements habillés.</div>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <div class="reviews">(58 avis)</div>
+  <div class="prix">32 000 FCFA</div>
   <div class="btn-group">
-    <button class="btn" onclick="addToCart(this)">Ajouter au panier</button>
-    <div class="quantity-controls" style="display:none;">
+    <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
+    <div class="quantity-controls">
       <button onclick="decreaseQty(this)">➖</button>
       <span>1</span>
       <button onclick="increaseQty(this)">➕</button>
@@ -259,11 +256,11 @@
 <!-- Produit 2 -->
 <div class="product-card">
   <img src="https://i.pinimg.com/1200x/02/fc/82/02fc824955798bfb7252f51a4d6b9f14.jpg" alt="Loafers cuir noir">
-  <div class="product-title">Loafers Prestige</div>
-  <div class="product-description">Classiques et confortables, parfaites pour le bureau ou les événements habillés.</div>
+  <div class="product-title">Oxford Élégance</div>
+  <div class="product-description">Chaussures formelles noires avec une touche brillante pour les grands rendez-vous.</div>
   <div class="stars">⭐⭐⭐⭐⭐</div>
-  <div class="reviews">(58 avis)</div>
-  <div class="prix">32 000 FCFA</div>
+  <div class="reviews">(42 avis)</div>
+  <div class="prix">29 900 FCFA</div>
   <div class="btn-group">
     <button class="btn" onclick="showQuantity(this)">Ajouter au panier</button>
     <div class="quantity-controls">
@@ -563,7 +560,6 @@
       }
 
       localStorage.setItem("panier", JSON.stringify(panier));
-      alert("✅ Produit ajouté au panier !");
     });
   });
 </script>

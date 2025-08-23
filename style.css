@@ -96,6 +96,19 @@
     font-weight: bold;
     transition: transform 0.3s, box-shadow 0.3s;
   }
+
+  .btnForm{
+    background: linear-gradient(90deg, #ff5e62, #ff9966);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-left: .5rem;
+  }
+  
   .btn:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(255,94,98,0.4);
@@ -263,6 +276,15 @@
     padding: 4rem 2rem;
     text-align: center;
     background: #f9f9f9;
+  
+  }
+
+
+  .input{
+   align-content: center;
+
+    
+
   }
   .newsletter h2 {
     font-size: 2rem;
@@ -283,6 +305,18 @@
     border: 1px solid #ccc;
     border-radius: 30px;
   }
+
+  .btn{
+    background: linear-gradient(to right, #ff4d4d, #ff914d);
+    color: #fff;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 5rem;
+  }
   
   /* FOOTER */
 footer {
@@ -290,7 +324,6 @@ footer {
       padding: 20px;
       color: #555;
       background: #fff;
-      margin-top: 50px;
     }
 
   /* FOOTER */
@@ -469,7 +502,7 @@ input {
     font-size: 16px;
 }
 
-.btn {
+.btn{
     width: 100%;
     background: linear-gradient(to right, #ff4d4d, #ff914d);
     color: #fff;
@@ -527,4 +560,242 @@ input {
   background: linear-gradient(135deg, #fef1f1, #ffeae0);
   padding: 60px 20px;
   text-align: center;
+}
+
+
+
+.cart-btn img {
+  width: 55px;
+  height: auto; /* garde les proportions */
+}
+
+
+
+
+
+
+
+
+/* Groupe bouton + quantités */
+.produits-grid .btn-group{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+/* Bouton ajouter (on réutilise ton style .btn, on lui ajoute .btn-add) */
+.btn-add{
+  background: linear-gradient(to right, #ff4d4d, #ff914d);
+  color:#fff; font-weight:700; border:none; border-radius:8px;
+  padding:10px 14px; cursor:pointer; width:100%;
+  transition: transform .2s ease, box-shadow .3s ease;
+}
+.btn-add:hover{ transform:scale(1.03); box-shadow:0 6px 14px rgba(255,126,0,.35); }
+
+/* Contrôles quantité */
+.quantity-controls{
+  display:none; align-items:center; justify-content:center; gap:14px;
+}
+.quantity-controls button{
+  background: linear-gradient(to right, #ff4d4d, #ff914d);
+  color:#fff; border:none; border-radius:8px; padding:6px 12px;
+  font-size:18px; font-weight:700; cursor:pointer; line-height:1;
+  transition: transform .15s ease;
+}
+.quantity-controls button:hover{ transform:scale(1.05); }
+.quantity-controls span{
+  min-width: 18px; text-align:center; font-weight:700;
+}
+
+
+
+
+/* Conteneur des icônes (panier + compte) */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espace entre panier et compte */
+}
+
+/* Icône Panier */
+.cart-btn {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cart-btn:hover {
+  transform: scale(1.2);
+  color: #7b3b0c;
+}
+
+/* Icône Compte */
+#account-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#account-btn i {
+  color: #e66f00;
+  font-size: 1.8rem;
+}
+
+/* Effet hover sur l'icône compte */
+#account-btn:hover i {
+  transform: scale(1.2);
+  color: #ff5500; /* un orange plus foncé */
+}
+
+/* Dropdown menu du compte */
+.account-menu {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 120%; /* en dessous du bouton */
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 200;
+  overflow: hidden;
+}
+
+.dropdown button {
+  background: none;
+  border: none;
+  padding: 12px 15px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  transition: background 0.2s ease;
+}
+
+.dropdown button:hover {
+  background: #ffe5cc;
+  color: #ff5500;
+}
+
+
+
+.rc {
+  display: flex;         /* Active le mode flex */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center;     /* Centre verticalement */
+  gap: 5px;
+
+  
+}
+
+
+
+
+
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+.header {
+  background-color: #e66f00;
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.header nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.header nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f7f7f7;
+}
+
+.hero img {
+  max-width: 100%;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.valeurs-grid, .team-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.valeur-card, .team-member {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+
+
+
+.btn-retour-icon {
+  background: linear-gradient(to right, #ffa500, #ff5500);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 44px;
+  height: 44px;
+  border-radius: 20%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+        font-size: 1.1rem;
+      margin: 15px 0 5px;
+}
+
+.btn-retour-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(255, 85, 0, 0.5);
+}
+    .btn-retour-container {
+  margin: -10px 80px 10px 20px; /* remonte le bouton */
+}
+
+
+    .btn-add:active {
+  transform: scale(0.95);
 }

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Look’n’Go - Accueil</title>
   <link rel="stylesheet" href="style.css">
+  <!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,13 +17,29 @@
 <nav class="navbar">
   <ul class="nav-links">
     <li><a href="index.html">Accueil</a></li>
-    <li><a href="#produits">Produits</a></li>
-    <li><a href="#lookbook">Lookbook</a></li>
-    <li><a href="inscription.html">Inscription</a></li>
+    <li><a href="boutique.html">Boutique</a></li>
+    <li><a href="A propos.html"> A propos</a></li>
   </ul>
 </nav>
-    <a href="panier.html" class="cart-btn" id="cart-btn">🛒</a>
 
+<div class="rc">
+      <!-- Icône Compte -->
+      <div class="account-menu">
+        <button id="account-btn">
+          <a href="inscription.html"><i class="fa-solid fa-user" style="color: #ff4d4d; font-size: 23px;   transition: transform 0.2s ease, color 0.2s ease;"></i></a>
+        </button>
+        <div class="dropdown" id="account-dropdown">
+          <!-- Contenu injecté par JavaScript -->
+        </div>
+      </div>
+   
+        <a href="panier.html" class="cart-btn" id="cart-btn">
+          <img src="https://i.pinimg.com/736x/6f/d2/2e/6fd22e06b8a28e0f2917461c16a99fc8.jpg" alt="Panier" width="30" height="30">
+        </a>
+  
+      </div>
+
+    
   </header>
 
   <!-- HERO -->
@@ -30,7 +49,7 @@
     <div class="slider-text" id="sliderText">
     <h1>Exprime ton style, <br> inspire la rue.</h1>
     <p>Découvrez nos tenues tendance et chaussures iconiques.</p>
-    <a href="panier.html" class="btn">Voir la boutique</a>
+    <a href="boutique.html" class="btn">Voir la boutique</a>
   </div>
   </section>
   
@@ -185,7 +204,8 @@
     <p class="desc">Stabilité et adhérence pour vos exercices les plus exigeants.</p>
     <p class="prix">21 000 F CFA</p>
     <button class="btn">Ajouter au panier</button>
-  </div>
+
+
 
 
     </div>
@@ -193,62 +213,15 @@
 
 
   
-  
-
- <!-- LOOKBOOK -->
-<section class="lookbook">
-    <h2 class="section-title">📸 Lookbook</h2>
-    <div class="lookbook-container">
-        <!-- <button class="lookbook-btn right" onclick="scrollLookbook(1)">&#8250;</button> -->
-        <div class="lookbook-scroll" id="lookbookSlider">
-        <img src="https://i.pinimg.com/1200x/6e/19/f5/6e19f5e793dcabac73990534aa9d8a19.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/4f/90/bb/4f90bb14fff960696bf93b3971a1520c.jpg" alt="">
-
-
-        <img src="https://i.pinimg.com/1200x/64/d9/bb/64d9bbf1ee04c976a6d4df1e2ca77509.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/c9/d0/30/c9d030978a66a51e8074941b28bcbac2.jpg" alt="">
-        <img src="https://i.pinimg.com/1200x/ce/59/ce/ce59ce55e36b9a37d387f0cd3f57e21a.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/f3/e5/8f/f3e58f4e0cac5dc38a92348244448c04.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/0b/f3/e7/0bf3e79a67de1afa037af845c2111e2b.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/d3/f0/d7/d3f0d7834ef8ad68cdd40914e9233af9.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/1c/a3/bb/1ca3bb5c8b754c03ab4150b319d21cde.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/2f/d6/01/2fd60174d66dae6773e97ac9ac8f059a.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/04/c7/03/04c7033b363d2fb6e680cd52d6a478d7.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/86/7c/9d/867c9d2c88a63c1bd47e3ff2505bdbeb.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/d4/ae/e2/d4aee2646f67dfdcd45becced5a87e7f.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/d8/71/34/d871342498d4a70dfd8faead5c891be8.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/d7/5d/5b/d75d5baa5e2c98e568ffe5576665a4cf.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/66/76/3a/66763a1e562c71ce85d98b276a9e3d51.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/3b/f4/71/3bf471607172ae4bb13bcd45fbf07e54.jpg" alt="">      
-        <img src="https://i.pinimg.com/736x/aa/f9/49/aaf94926c0537198f10d933968549174.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/cb/0b/d4/cb0bd4c772c699a36cbf4d76d5590c55.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/ee/0b/a8/ee0ba8f9cf8f8fb5331e57a369e0b366.jpg" alt="">
-        <img src="https://i.pinimg.com/1200x/32/55/28/32552840b6ad076b5586333f3b735f5b.jpg" alt="">
-        <img src="https://i.pinimg.com/1200x/68/b7/da/68b7da57b4f2010fe74077c25cf7c0d8.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/e5/04/49/e50449fddb70a5e23f3f554744b8a567.jpg" alt="">
-        <img src="https://i.pinimg.com/736x/83/a5/eb/83a5ebf8ef606ee4952fc0a7d7f90e2c.jpg" alt="">
-
-       
-       
-<div class="background-animation">
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-</div>
-
-
-      <!-- <button class="lookbook-btn right" onclick="scrollLookbook(1)">&#8250;</button> -->
-    </div>
-  </section>
 
   <!-- NEWSLETTER -->
   <section class="newsletter">
     <h2>Restez informé</h2>
     <p>Recevez nos offres spéciales directement dans votre boîte mail.</p>
-    <form>
+    <div class="input">
       <input type="email" placeholder="Votre email" required>
-      <button type="submit" class="btn">S’abonner</button>
-    </form>
+      <button type="submit" class="btnForm">S’abonner</button>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -257,10 +230,12 @@
     <div class="socials">
       <a href="#">Instagram</a> | <a href="#">Facebook</a>
     </div>
+
+
+    
   </footer>
 
   <script src="script.js"></script>
-
   <script>
     function scrollLookbook(direction) {
       const container = document.getElementById("lookbookScroll");
@@ -318,8 +293,104 @@
     setInterval(updateSlide, 10000); // 10 sec
     window.onload = updateSlide;
   </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  
+    function addToCart(nom, prix, qte){
+      const existing = cart.find(p => p.nom === nom);
+      if(existing){
+        existing.qte = qte;
+      }else{
+        cart.push({ nom, prix, qte });
+      }
+      saveCart();
+    }
+  
+    function removeFromCart(nom){
+      cart = cart.filter(p => p.nom !== nom);
+      saveCart();
+    }
+  
+    // Gestion boutons comme avant
+    document.querySelectorAll('.produit-card').forEach(card => {
+      const btn = card.querySelector('button.btn, button.btn-add');
+      if(!btn) return;
+  
+      if (btn.parentElement && btn.parentElement.classList.contains('btn-group')) return;
+  
+      const group = document.createElement('div');
+      group.className = 'btn-group';
+      btn.replaceWith(group);
+      btn.classList.add('btn-add');
+      group.appendChild(btn);
+  
+      const qc = document.createElement('div');
+      qc.className = 'quantity-controls';
+      qc.style.display = 'none';
+      qc.innerHTML = `
+        <button type="button" class="qty-dec">➖</button>
+        <span>1</span>
+        <button type="button" class="qty-inc">➕</button>
+      `;
+      group.appendChild(qc);
+    });
+  
+    const section = document.querySelector('.produits-section');
+    section.addEventListener('click', (e) => {
+      const card = e.target.closest('.produit-card');
+      if(!card) return;
+  
+      const nom = card.querySelector('h3').textContent.trim();
+      const prixText = card.querySelector('.prix').textContent.replace(/[^\d]/g,'');
+      const prix = parseInt(prixText, 10);
+  
+      const addBtn = e.target.closest('.btn-add');
+      if(addBtn){
+        const group = addBtn.parentElement;
+        const qc = group.querySelector('.quantity-controls');
+        addBtn.style.display = 'none';
+        qc.style.display = 'flex';
+        addToCart(nom, prix, 1);
+        return;
+      }
+  
+      const inc = e.target.closest('.qty-inc');
+      if(inc){
+        const span = inc.parentElement.querySelector('span');
+        let qte = parseInt(span.textContent,10)+1;
+        span.textContent = qte;
+        addToCart(nom, prix, qte);
+        return;
+      }
+  
+      const dec = e.target.closest('.qty-dec');
+      if(dec){
+        const span = dec.parentElement.querySelector('span');
+        let qte = parseInt(span.textContent,10);
+        if(qte <= 1){
+          const qc = dec.parentElement;
+          const add = qc.previousElementSibling;
+          qc.style.display = 'none';
+          add.style.display = 'block';
+          span.textContent = '1';
+          removeFromCart(nom);
+        }else{
+          qte -= 1;
+          span.textContent = qte;
+          addToCart(nom, prix, qte);
+        }
+        return;
+      }
+    });
+  });
+  </script>
+  </body>
+  </html>
   
   
-  
-</body>
-</html> 

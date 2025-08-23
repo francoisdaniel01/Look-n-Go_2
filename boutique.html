@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Boutique | Look’n’Go</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
     body .container {
@@ -25,6 +26,8 @@
       padding: 40px 20px;
     }
 
+
+    
     h1 {
       text-align: center;
       font-size: 2.2rem;
@@ -222,17 +225,33 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="sticky">
     <div class="logo">👟 Look’n’Go</div>
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="#produits">Produits</a></li>
-        <li><a href="#lookbook">Lookbook</a></li>
-        <li><a href="inscription.html">Inscription</a></li>
-      </ul>
-    </nav>
-    <a href="panier.html" class="cart-btn" id="cart-btn">🛒</a>
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="A propos.html"> A propos</a></li>
+  </ul>
+</nav>
+
+<div class="rc">
+      <!-- Icône Compte -->
+      <div class="account-menu">
+        <button id="account-btn">
+          <a href="inscription.html"><i class="fa-solid fa-user" style="color: #ff4d4d; font-size: 23px;   transition: transform 0.2s ease, color 0.2s ease;"></i></a>
+        </button>
+        <div class="dropdown" id="account-dropdown">
+                  </div>
+      </div>
+   
+        <a href="panier.html" class="cart-btn" id="cart-btn">
+          <img src="https://i.pinimg.com/736x/6f/d2/2e/6fd22e06b8a28e0f2917461c16a99fc8.jpg" alt="Panier" width="30" height="30">
+        </a>
+  
+      </div>
+
+    
   </header>
 
   <div class="container">
@@ -297,7 +316,7 @@
   <img src="https://i.pinimg.com/1200x/0c/07/27/0c072785ceafde5d729ff0ba3053e5c6.jpg" alt="Robes d’Été">
   <div class="product-title">Robes d’Été</div>
   <div class="product-description">Des tenues légères, colorées et parfaites pour la saison chaude.</div>
-  <a href="categorie-robes.html" class="btn-secondary">Voir similaires</a>
+  <a href="categorie-robes.html" class="btn">Voir similaires</a>
 </div>
 
       <!-- Catégorie 8 -->
@@ -361,7 +380,7 @@
   <img src="https://i.pinimg.com/736x/34/5f/41/345f416c6870df71a4d34aec768e7734.jpg" alt="Pantalons Femme">
   <div class="product-title">Pantalons Femme</div>
   <div class="product-description">Des coupes modernes et confortables pour toutes les occasions.</div>
-  <a href="pantalons Femme.html" class="btn-secondary">Voir similaires</a>
+  <a href="pantalons Femme.html" class="btn">Voir similaires</a>
 </div>
 
 <!-- Catégorie 16 -->

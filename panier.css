@@ -1,0 +1,169 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffffff, #f2f2ff, #fff0f5);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 11%;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  user-select: none;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+nav ul li a:hover {
+  color: #ff6a00;
+}
+h1 {
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #333;
+}
+.panier-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+th {
+  background-color: #f5a623;
+  color: white;
+}
+img.product-img {
+  width: 80px; height: 80px; object-fit: cover; border-radius: 8px;
+}
+.qty-controls button {
+  background: linear-gradient(to right, #ff4d4d, #ff914d);
+  border: none; color: white; padding: 5px 10px;
+  border-radius: 5px; cursor: pointer; margin: 0 5px;
+}
+.remove-btn {
+  background: #ff4444; border: none; color: white;
+  padding: 8px 12px; border-radius: 5px; cursor: pointer;
+}
+.total-row td { font-weight: bold; font-size: 1.2em; color: #222; }
+.empty-message { text-align: center; font-size: 1.2em; color: #666; padding: 40px 0; }
+
+/* Boutons principaux */
+.btn-valider, .btn-supprimer {
+  font-size: 1.2rem; padding: 12px 30px; border: none;
+  border-radius: 8px; cursor: pointer; font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.btn-valider {
+  background: linear-gradient(to right, #12bd48, #069433); color: white;
+  box-shadow: 0 4px 8px rgba(0, 128, 0, 0.4);
+}
+.btn-supprimer {
+  background: linear-gradient(to right, #ff4d4d, #d10000); color: white;
+  box-shadow: 0 4px 8px rgba(209, 0, 0, 0.6);
+}
+
+/* Modal Paiement */
+.modal {
+  display: none; position: fixed; z-index: 200;
+  left: 0; top: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6); justify-content: center; align-items: center;
+}
+.modal-content {
+  background: #fff; padding: 20px; border-radius: 10px;
+  width: 400px; max-width: 95%; text-align: center;
+}
+.modal-content input, #formPaiement select {
+  width: 90%; padding: 10px; margin: 10px 0;
+  border: 1px solid #ccc; border-radius: 6px;
+}
+.close {
+  float: right; font-size: 1.5rem; cursor: pointer; color: red;
+}
+.submit-btn {
+  background: linear-gradient(to right, #12bd48, #069433);
+  color: white; padding: 12px 30px; border: none;
+  border-radius: 8px; cursor: pointer; font-weight: 700;
+}
+.paiement-method {
+  display: none;
+  margin-top: 15px;
+}
+
+.methode-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+.methode-icons label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.methode-icons input[type="radio"] {
+  display: none;
+}
+.methode-icons img {
+  width: 60px;
+  height: auto;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.methode-icons input[type="radio"]:checked + img,
+.methode-icons img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+
+#receipt-details {
+  text-align: left;
+  margin: 15px 0;
+  padding: 15px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+#receipt-details strong {
+  color: #ff6a00;
+}
+
